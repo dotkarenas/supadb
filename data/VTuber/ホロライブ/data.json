@@ -1,0 +1,407 @@
+{
+  "metadata": {
+    "job": "VTuber",
+    "groups": "ホロライブ",
+    "options": [
+      "ホロライブ 0期生",
+      "ホロライブ 1期生",
+      "ホロライブゲーマーズ",
+      "ホロライブ 2期生",
+      "ホロライブ 3期生",
+      "ホロライブ 4期生",
+      "ホロライブ 5期生",
+      "秘密結社holoX",
+      "ホロライブインドネシア",
+      "ホロライブEnglish",
+      "Myth",
+      "Project: HOPE",
+      "Promise",
+      "Council",
+      "Advent",
+      "Justice",
+      "hololive DEV_IS",
+      "ReGLOSS",
+      "FLOW GLOW",
+      "holoAN",
+      "事務所スタッフ"
+    ],
+    "source": "https://hololive.hololivepro.com/talents"
+  },
+  "members": [
+    {
+      "name": "AZKi Channel",
+      "youtube_id": "UC0TXe_LYZ4scaW2XMyi5_kw",
+      "options": null
+    },
+    {
+      "name": "Airani Iofifteen Channel hololive-ID",
+      "youtube_id": "UCAoy6rzhSf4ydcYjJw3WoVg",
+      "options": null
+    },
+    {
+      "name": "Anya Melfissa Ch. hololive-ID",
+      "youtube_id": "UC727SQYUvx5pDDGQpTICNWg",
+      "options": null
+    },
+    {
+      "name": "Ao Ch. 火威青 ‐ ReGLOSS",
+      "youtube_id": "UCMGfV7TVTmHhEErVJg1oHBQ",
+      "options": null
+    },
+    {
+      "name": "Aqua Ch. 湊あくあ",
+      "youtube_id": "UC1opHUrw8rvnsadT-iGp7Cg",
+      "options": null
+    },
+    {
+      "name": "Ayunda Risu Ch. hololive-ID",
+      "youtube_id": "UCOyYb1c43VlX9rc_lT6NKQw",
+      "options": null
+    },
+    {
+      "name": "Botan Ch.獅白ぼたん",
+      "youtube_id": "UCUKD-uaobj9jiqB-VXt71mA",
+      "options": null
+    },
+    {
+      "name": "Cecilia Immergreen Ch. hololive-EN",
+      "youtube_id": "UCvN5h1ShZtc7nly3pezRayg",
+      "options": null
+    },
+    {
+      "name": "Ceres Fauna Ch. hololive-EN",
+      "youtube_id": "UCO_aKKYxn4tvrqPjcTzZ6EQ",
+      "options": null
+    },
+    {
+      "name": "Chihaya Ch. 輪堂 千速 - FLOW GLOW",
+      "youtube_id": "UCKMWFR6lAstLa7Vbf5dH7ig",
+      "options": null
+    },
+    {
+      "name": "Chloe ch. 沙花叉クロヱ - holoX -",
+      "youtube_id": "UCIBY1ollUsauvVi4hW4cumw",
+      "options": null
+    },
+    {
+      "name": "Choco Ch. 癒月ちょこ",
+      "youtube_id": "UC1suqwovbL1kzsoaZgFZLKg",
+      "options": null
+    },
+    {
+      "name": "Coco Ch. 桐生ココ",
+      "youtube_id": "UCS9uQI-jC3DE0L4IpXyvr6w",
+      "options": null
+    },
+    {
+      "name": "Elizabeth Rose Bloodflame Ch. hololive-EN",
+      "youtube_id": "UCW5uhrG1eCBYditmhL0Ykjw",
+      "options": null
+    },
+    {
+      "name": "Flare Ch. 不知火フレア",
+      "youtube_id": "UCvInZx9h3jC2JzsIzoOebWg",
+      "options": null
+    },
+    {
+      "name": "Gawr Gura Ch. hololive-EN",
+      "youtube_id": "UCoSrY_IQQVpmIRZ9Xf-y93g",
+      "options": null
+    },
+    {
+      "name": "Gigi Murin Ch. hololive-EN",
+      "youtube_id": "UCDHABijvPBnJm7F-KlNME3w",
+      "options": null
+    },
+    {
+      "name": "HAACHAMA Ch 赤井はあと",
+      "youtube_id": "UC1CfXB_kRs3C-zaeTG3oGyg",
+      "options": null
+    },
+    {
+      "name": "Hajime Ch. 轟はじめ ‐ ReGLOSS",
+      "youtube_id": "UC1iA6_NT4mtAcIII6ygrvCw",
+      "options": null
+    },
+    {
+      "name": "Hakos Baelz Ch. hololive-EN",
+      "youtube_id": "UCgmPnx-EEeOrZSg5Tiw7ZRQ",
+      "options": null
+    },
+    {
+      "name": "IRyS Ch. hololive-EN",
+      "youtube_id": "UC8rcEBzJSleTkf_-agPM20g",
+      "options": null
+    },
+    {
+      "name": "Iroha ch. 風真いろは - holoX -",
+      "youtube_id": "UC_vMYWcDjmfdpH6r4TTn1MQ",
+      "options": null
+    },
+    {
+      "name": "Kaela Kovalskia Ch. hololive-ID",
+      "youtube_id": "UCZLZ8Jjx_RN2CXloOmgTHVg",
+      "options": null
+    },
+    {
+      "name": "Kanade Ch. 音乃瀬奏 ‐ ReGLOSS",
+      "youtube_id": "UCWQtYtq9EOB4-I5P-3fh8lA",
+      "options": null
+    },
+    {
+      "name": "Kanata Ch. 天音かなた",
+      "youtube_id": "UCZlDXzGoo7d44bwdNObFacg",
+      "options": null
+    },
+    {
+      "name": "Kobo Kanaeru Ch. hololive-ID",
+      "youtube_id": "UCjLEmnpCNeisMxy134KPwWw",
+      "options": null
+    },
+    {
+      "name": "Korone Ch. 戌神ころね",
+      "youtube_id": "UChAnqc_AY5_I3Px5dig3X1Q",
+      "options": null
+    },
+    {
+      "name": "Koseki Bijou Ch. hololive-EN",
+      "youtube_id": "UC9p_lqQ0FEDz327Vgf5JwqA",
+      "options": null
+    },
+    {
+      "name": "Koyori ch. 博衣こより - holoX -",
+      "youtube_id": "UC6eWCld0KwmyHFbAqK3V-Rw",
+      "options": null
+    },
+    {
+      "name": "Kureiji Ollie Ch. hololive-ID",
+      "youtube_id": "UCYz_5n-uDuChHtLo7My1HnQ",
+      "options": null
+    },
+    {
+      "name": "Lamy Ch. 雪花ラミィ",
+      "youtube_id": "UCFKOVgVbGmX65RxO3EtH3iw",
+      "options": null
+    },
+    {
+      "name": "Laplus ch. ラプラス・ダークネス - holoX -",
+      "youtube_id": "UCENwRMx5Yh42zWpzURebzTw",
+      "options": null
+    },
+    {
+      "name": "Lui ch. 鷹嶺ルイ - holoX -",
+      "youtube_id": "UCs9_O1tRPMQTHQ-N_L6FU2g",
+      "options": null
+    },
+    {
+      "name": "Luna Ch. 姫森ルーナ",
+      "youtube_id": "UCa9Y57gfeY0Zro_noHRVrnw",
+      "options": null
+    },
+    {
+      "name": "Marine Ch. 宝鐘マリン",
+      "youtube_id": "UCCzUftO8KOVkV4wQG1vkUvg",
+      "options": null
+    },
+    {
+      "name": "Matsuri Channel 夏色まつり",
+      "youtube_id": "UCQ0UDLQCjY0rmuxCDE38FGg",
+      "options": null
+    },
+    {
+      "name": "Miko Ch. さくらみこ",
+      "youtube_id": "UC-hM6YJuNYVAmUWxeIr9FeA",
+      "options": null
+    },
+    {
+      "name": "Mio Channel 大神ミオ",
+      "youtube_id": "UCp-5t9SrOQwXMU7iIjQfARg",
+      "options": null
+    },
+    {
+      "name": "Moona Hoshinova hololive-ID",
+      "youtube_id": "UCP0BspO_AMEe3aQqqpo89Dg",
+      "options": null
+    },
+    {
+      "name": "Mori Calliope Ch. hololive-EN",
+      "youtube_id": "UCL_qhgtOy0dy1Agp8vkySQg",
+      "options": null
+    },
+    {
+      "name": "Nakiri Ayame Ch. 百鬼あやめ",
+      "youtube_id": "UC7fk0CB07ly8oSl0aqKkqFg",
+      "options": null
+    },
+    {
+      "name": "Nanashi Mumei Ch. hololive-EN",
+      "youtube_id": "UC3n5uGu18FoCy23ggWWp8tA",
+      "options": null
+    },
+    {
+      "name": "Nene Ch.桃鈴ねね",
+      "youtube_id": "UCAWSyEs_Io8MtpY3m-zqILA",
+      "options": null
+    },
+    {
+      "name": "Nerissa Ravencroft Ch. hololive-EN",
+      "youtube_id": "UC_sFNM0z0MWm9A6WlKPuMMg",
+      "options": null
+    },
+    {
+      "name": "Niko Ch. 虎金妃笑虎 - FLOW GLOW",
+      "youtube_id": "UCuI_opAVX6qbxZY-a-AxFuQ",
+      "options": null
+    },
+    {
+      "name": "Ninomae Ina'nis Ch. hololive-EN",
+      "youtube_id": "UCMwGHR0BTZuLsmjY_NT5Pwg",
+      "options": null
+    },
+    {
+      "name": "Noel Ch. 白銀ノエル",
+      "youtube_id": "UCdyqAaZDKHXg4Ahi7VENThQ",
+      "options": null
+    },
+    {
+      "name": "Okayu Ch. 猫又おかゆ",
+      "youtube_id": "UCvaTdHTWBGv3MKj3KVqJVCw",
+      "options": null
+    },
+    {
+      "name": "Ouro Kronii Ch. hololive-EN",
+      "youtube_id": "UCmbs8T6MWqUHP1tIQvSgKrg",
+      "options": null
+    },
+    {
+      "name": "Pavolia Reine Ch. hololive-ID",
+      "youtube_id": "UChgTyjG-pdNvxxhdsXfHQ5Q",
+      "options": null
+    },
+    {
+      "name": "Pekora Ch. 兎田ぺこら",
+      "youtube_id": "UC1DCedRgGHBdm81E1llLhOQ",
+      "options": null
+    },
+    {
+      "name": "Polka Ch. 尾丸ポルカ",
+      "youtube_id": "UCK9V2B22uJYu3N7eR_BT9QA",
+      "options": null
+    },
+    {
+      "name": "Raden Ch. 儒烏風亭らでん ‐ ReGLOSS",
+      "youtube_id": "UCdXAk5MpyLD8594lm_OvtGQ",
+      "options": null
+    },
+    {
+      "name": "Raora Panthera Ch. hololive-EN",
+      "youtube_id": "UCl69AEx4MdqMZH7Jtsm7Tig",
+      "options": null
+    },
+    {
+      "name": "Riona Ch. 響咲リオナ - FLOW GLOW",
+      "youtube_id": "UC9LSiN9hXI55svYEBrrK-tw",
+      "options": null
+    },
+    {
+      "name": "Ririka Ch. 一条莉々華 ‐ ReGLOSS",
+      "youtube_id": "UCtyWhCj3AqKh2dXctLkDtng",
+      "options": null
+    },
+    {
+      "name": "Roboco Ch. - ロボ子",
+      "youtube_id": "UCDqI2jOz0weumE8s7paEk6g",
+      "options": null
+    },
+    {
+      "name": "Shion Ch. 紫咲シオン",
+      "youtube_id": "UCXTpFs_3PqI41qX2d9tL2Rw",
+      "options": null
+    },
+    {
+      "name": "Shiori Novella Ch. hololive-EN",
+      "youtube_id": "UCgnfPPb9JI3e9A4cXHnWbyg",
+      "options": null
+    },
+    {
+      "name": "SoraCh. ときのそらチャンネル",
+      "youtube_id": "UCp6993wxpyDPHUpavwDFqgg",
+      "options": null
+    },
+    {
+      "name": "Su Ch. 水宮枢 - FLOW GLOW",
+      "youtube_id": "UCjk2nKmHzgH5Xy-C5qYRd5A",
+      "options": null
+    },
+    {
+      "name": "Subaru Ch. 大空スバル",
+      "youtube_id": "UCvzGlP9oQwU--Y0r9id_jnA",
+      "options": null
+    },
+    {
+      "name": "Suisei Channel",
+      "youtube_id": "UC5CwaMl1eIgY8h02uZw7u8A",
+      "options": null
+    },
+    {
+      "name": "Takanashi Kiara Ch. hololive-EN",
+      "youtube_id": "UCHsx4Hqa-1ORjQTh9TYDhww",
+      "options": null
+    },
+    {
+      "name": "Towa Ch. 常闇トワ",
+      "youtube_id": "UC1uv2Oq6kNxgATlCiez59hw",
+      "options": null
+    },
+    {
+      "name": "Tsukumo Sana Ch. hololive-EN",
+      "youtube_id": "UCsUj0dszADCGbF3gNrQEuSQ",
+      "options": null
+    },
+    {
+      "name": "Vestia Zeta Ch. hololive-ID",
+      "youtube_id": "UCTvHWSfBZgtxE4sILOaurIQ",
+      "options": null
+    },
+    {
+      "name": "Vivi Ch. 綺々羅々ヴィヴィ - FLOW GLOW",
+      "youtube_id": "UCGzTVXqMQHa4AgJVJIVvtDQ",
+      "options": null
+    },
+    {
+      "name": "Watame Ch. 角巻わため",
+      "youtube_id": "UCqm3BQLlJfvkTsX_hvm0UmA",
+      "options": null
+    },
+    {
+      "name": "Watson Amelia Ch. hololive-EN",
+      "youtube_id": "UCyl1z3jo3XHR1riLFKG5UAg",
+      "options": null
+    },
+    {
+      "name": "holoAN room (ホロアナ)",
+      "youtube_id": "UCozx5csNhCx1wsVq3SZVkBQ",
+      "options": null
+    },
+    {
+      "name": "hololive ホロライブ - VTuber Group",
+      "youtube_id": "UCJFZiqLMntJufDCHc6bQixg",
+      "options": null
+    },
+    {
+      "name": "アキロゼCh。Vtuber/ホロライブ所属",
+      "youtube_id": "UCFTLzh12_nrtzqBPsTCqenA",
+      "options": null
+    },
+    {
+      "name": "フブキCh。白上フブキ",
+      "youtube_id": "UCdn5BQ06XqgXoAxIhbqw5Rg",
+      "options": null
+    },
+    {
+      "name": "フワワ・アビスガード / モココ・アビスガード",
+      "youtube_id": "UCt9H_RpQzhxzlyBxFqrdHqA",
+      "options": null
+    }
+  ]
+}
