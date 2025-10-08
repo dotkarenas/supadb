@@ -1,0 +1,20 @@
+{
+  "metadata": {
+    "job": "VTuber",
+    "groups": "VAZ",
+    "options": [""],
+    "source": "https://vaz.co.jp/talent-category/vtuber/"
+  },
+  "members": [
+    {
+      "name": "みけねこ。",
+      "youtube_id": "UC54JqsuIbMw_d1Ieb4hjKoQ",
+      "options": null
+    },
+    {
+      "name": "こげたま",
+      "youtube_id": "UCL9nXh-yJhbQwyAprokBRVA",
+      "options": null
+    }
+  ]
+}
