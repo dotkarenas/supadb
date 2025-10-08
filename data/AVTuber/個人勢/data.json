@@ -2,14 +2,34 @@
   "metadata": {
     "job": "AVTuber",
     "groups": "個人勢",
-    "options": ["ASMR"],
+    "options": null,
     "source": null
   },
   "members": [
     {
       "name": "初恋ひめか",
       "youtube_id": "UCixCDwbH3Xu3R4fK7vcbjTw",
-      "options": ["ASMR"]
+      "options": null
+    },
+    {
+      "name": "あお。",
+      "youtube_id": "UCFLtLNp3W5YNJ9z7Ul0LW1g",
+      "options": null
+    },
+    {
+      "name": "みゃー",
+      "youtube_id": "UC2HqDFJpFdLyvYYNcCVPyeQ",
+      "options": null
+    },
+    {
+      "name": "白狛のえ",
+      "youtube_id": "UC873QfpFV3-GqzMvGAB5Ypg",
+      "options": null
+    },
+    {
+      "name": "乃楽莉みや",
+      "youtube_id": "UC5tb6ejk2aGOzL0a1ZCR9sg",
+      "options": null
     }
   ]
 }

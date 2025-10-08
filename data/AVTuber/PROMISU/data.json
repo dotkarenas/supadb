@@ -1,0 +1,75 @@
+{
+  "metadata": {
+    "job": "AVTuber",
+    "groups": "PROMISU",
+    "options": [
+      "PROMISU JP 1期生",
+      "PROMISU JP 2期生",
+      "PROMISU JP 3期生",
+      "PROMISU EN 1期生"
+    ],
+    "source": "https://www.promisu.live/talent"
+  },
+  "members": [
+    {
+      "name": "千歳みおん",
+      "youtube_id": "UCSC-EsDzB-miYE0RBK8BruA",
+      "options": ["PROMISU JP 1期生"]
+    },
+    {
+      "name": "セラ",
+      "youtube_id": "UCHpYlJ6cQSRfZRqYYpBZ5Zg",
+      "options": ["PROMISU JP 1期生"]
+    },
+    {
+      "name": "ライム",
+      "youtube_id": "UC8ovxEdfWCxTUTgklpp164A",
+      "options": ["PROMISU JP 1期生"]
+    },
+    {
+      "name": "夢看ルナ",
+      "youtube_id": "UCAuk17GvTVrdOMWt7iqmEDg",
+      "options": ["PROMISU JP 2期生"]
+    },
+    {
+      "name": "灰咲しの",
+      "youtube_id": "UC-OmmOXyw7sP-h5Xh-MMzZg",
+      "options": ["PROMISU JP 2期生"]
+    },
+    {
+      "name": "玉乃井ひのき",
+      "youtube_id": "UC3oGSjqdUcPg3HA4JCH26xw",
+      "options": ["PROMISU JP 2期生"]
+    },
+    {
+      "name": "泡姫ことね",
+      "youtube_id": "UCH-8gQVBlnoviOtkGzD0KAA",
+      "options": ["PROMISU JP 3期生"]
+    },
+    {
+      "name": "舞日いこか",
+      "youtube_id": "UCf-ZnIB8uSdG5KZnij6wtrw",
+      "options": ["PROMISU JP 3期生"]
+    },
+    {
+      "name": "唄タ寝るね",
+      "youtube_id": "UCYkZjqQNvC1YEdBzcrUMaxw",
+      "options": ["PROMISU JP 3期生"]
+    },
+    {
+      "name": "Beni Doki",
+      "youtube_id": "UCkjylNd4WxDz9Lnn-GBbfhw",
+      "options": ["PROMISU EN 1期生"]
+    },
+    {
+      "name": "Euryale Drift",
+      "youtube_id": "UC1h7-G-f84m-vjvNDEbbUuA",
+      "options": ["PROMISU EN 1期生"]
+    },
+    {
+      "name": "Myra Locke",
+      "youtube_id": "UCjYQnI0EC6R5Ig9_41M2gDA",
+      "options": ["PROMISU EN 1期生"]
+    }
+  ]
+}
