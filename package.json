@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "validate": "ajv validate -s data/schema.json -d",
+    "bulk-create": "tsx scripts/bulk-create-threads.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,7 +21,11 @@
   },
   "homepage": "https://github.com/dotkarenas/supadb#readme",
   "devDependencies": {
+    "@supabase/supabase-js": "^2.74.0",
+    "@types/node": "^24.7.0",
     "ajv": "^8.17.1",
-    "ajv-cli": "^5.0.0"
+    "ajv-cli": "^5.0.0",
+    "dotenv": "^17.2.3",
+    "tsx": "^4.20.6"
   }
 }
