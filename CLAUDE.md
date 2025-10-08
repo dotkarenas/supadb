@@ -4,60 +4,107 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a data repository for managing VTuber information using JSON-based structured data. The repository contains metadata and member information for various VTuber groups, validated against a JSON schema.
+This is a data repository for managing VTuber information using JSON-based structured data. The repository contains metadata and member information for various VTuber groups, which can be synced to a Supabase database.
+
+## Commands
+
+### Validation
+```bash
+npm run validate -- data/VTuber/{group_name}/data.json
+```
+Validates a data.json file against the JSON schema using AJV.
+
+### Bulk Thread Creation
+```bash
+npm run bulk-create data/VTuber/{group_name}/data.json
+```
+Syncs VTuber data to Supabase:
+- Creates threads in the `threads` table with YouTube channel info and avatars
+- Updates existing threads if data has changed (name, YouTube title, tags)
+- Uploads channel thumbnails to Supabase Storage (`threads` bucket)
+- Associates tags (job, group, options) with threads via `thread_tags` table
+- Uses YouTube Data API v3 to fetch channel metadata
+- Includes rate limiting (100ms delay between API calls)
+
+## Architecture
+
+### Data Layer
+- `data/schema.json`: JSON Schema defining the structure for all VTuber data
+- `data/template.json`: Template for creating new group data files
+- `data/VTuber/{group_name}/data.json`: Per-group VTuber data files
+
+### Supabase Integration
+The `bulk-create-threads.ts` script integrates with Supabase:
+- **Database Tables**:
+  - `threads`: Stores VTuber info (id, name, youtube_id, youtube_title, avatar_path)
+  - `tags`: Tag definitions (id, name)
+  - `thread_tags`: Many-to-many relationship (thread_id, tag_id)
+- **Storage**: `threads` bucket stores channel avatars at path `{thread_id}/avatar/{timestamp}.jpg`
+- **Authentication**: Uses service role key to bypass RLS
+
+### Tag System
+Tags are automatically created from:
+1. `metadata.job` (e.g., "VTuber")
+2. `metadata.groups` (e.g., "ホロライブ")
+3. `member.options` (e.g., ["ホロライブ 0期生"])
+
+When syncing existing threads, the script compares current tags with expected tags from data.json and updates accordingly.
+
+## Environment Variables
+
+Required in `.env`:
+- `NEXT_PUBLIC_SUPABASE_URL`: Supabase project URL
+- `SUPABASE_SERVICE_ROLE_KEY`: Service role key for admin operations
+- `YOUTUBE_API_KEY`: YouTube Data API v3 key
 
 ## Data Structure
 
-### Schema Definition
-- `data/schema.json`: JSON Schema that defines the required structure for all VTuber data files
-- `data/template.json`: Template file for creating new VTuber group data
-
-### Data Organization
-- `data/VTuber/{group_name}/data.json`: Each VTuber group has its own directory with a `data.json` file
-- Existing groups: にじさんじ, ホロライブ, ぶいすぽっ！, Neo-Porte, VShojo, .LIVE, 登龍門BOX, 個人勢
-
-### Data Format
-Each `data.json` file must follow this structure:
+Each `data.json` follows this schema:
 ```json
 {
   "metadata": {
     "job": "VTuber",
     "groups": "Group Name",
-    "options": ["Generation/Period tags"],
+    "options": ["Optional tags"],
     "source": "Official website URL"
   },
   "members": [
     {
       "name": "VTuber Name",
-      "youtube_id": "YouTube Channel ID (UC...) or handle (@...)",
-      "options": ["Generation/Period tags"]
+      "youtube_id": "UC... or @handle",
+      "options": ["Member-specific tags"]
     }
   ]
 }
 ```
 
-## Environment Variables
-
-- `YOUTUBE_API_KEY`: YouTube Data API v3 key (stored in `.env`)
+### YouTube ID Formats
+- Channel ID: `UCxxxxxxxxxxxxxxxxxxx` (22 characters after UC)
+- Handle: `@username`
 
 ## Validation Rules
 
-When adding or modifying VTuber data:
-1. Ensure JSON structure matches `data/schema.json`
-2. `youtube_id` must match pattern: `^(UC[a-zA-Z0-9_-]{22}|@[a-zA-Z0-9_-]+)$`
-3. All required fields (`name`, `youtube_id` in members; `job`, `groups`, `source` in metadata) must be present
-4. Validate JSON syntax before committing
+- `youtube_id` must match: `^(UC[a-zA-Z0-9_-]{22}|@[a-zA-Z0-9_-]+)$`
+- Required fields: `metadata.job`, `metadata.groups`, `member.name`, `member.youtube_id`
+- Optional fields: `metadata.options`, `metadata.source`, `member.options`
 
 ## Working with Data
 
-### Adding a New VTuber Group
+### Adding New VTuber Group
 1. Create directory: `data/VTuber/{group_name}/`
 2. Copy `data/template.json` as starting point
-3. Fill in metadata and members information
-4. Validate against schema
+3. Fill in metadata and members
+4. Validate: `npm run validate -- data/VTuber/{group_name}/data.json`
+5. Sync to Supabase: `npm run bulk-create data/VTuber/{group_name}/data.json`
 
 ### Updating Existing Data
-1. Locate the appropriate `data/VTuber/{group_name}/data.json`
-2. Modify member information or metadata
-3. Ensure schema compliance
-4. Verify YouTube IDs are correct
+1. Edit `data/VTuber/{group_name}/data.json`
+2. Validate changes against schema
+3. Re-run bulk-create to sync updates (script handles updates automatically)
+
+### Sync Behavior
+The bulk-create script is idempotent:
+- Creates new threads for new members
+- Updates existing threads if name, YouTube title, or tags changed
+- Skips unchanged threads
+- Reports summary (success/skipped/failed counts)
