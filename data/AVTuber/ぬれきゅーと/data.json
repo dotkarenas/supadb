@@ -1,0 +1,25 @@
+{
+  "metadata": {
+    "job": "AVTuber",
+    "groups": "ぬれきゅーと",
+    "options": ["ASMR"],
+    "source": "https://nurecute.com/"
+  },
+  "members": [
+    {
+      "name": "白月るう",
+      "youtube_id": "UCfEnxYj1UsZS76NrzmiXlsA",
+      "options": ["ASMR"]
+    },
+    {
+      "name": "天羽はくあ",
+      "youtube_id": "UCBfTFZlBzbFuq8UB8GGsLLQ",
+      "options": ["ASMR"]
+    },
+    {
+      "name": "環にあ",
+      "youtube_id": "UCt9NTMEeWgTfnBUj9X_PwgA",
+      "options": ["ASMR"]
+    }
+  ]
+}
