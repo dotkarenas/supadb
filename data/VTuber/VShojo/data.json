@@ -1,0 +1,75 @@
+{
+  "metadata": {
+    "job": "VTuber",
+    "groups": "VShojo",
+    "options": ["VShojoEN", "VShojoJP", "VShojo NOVA"],
+    "source": "https://www.vshojo.com/"
+  },
+  "members": [
+    {
+      "name": "",
+      "youtube_id": "UC8THb_fnOptyVgpi3xuCd-A",
+      "options": ["VShojoEN"]
+    },
+    {
+      "name": "",
+      "youtube_id": "UCtNeQ8cUwvAAhBbVbwfGWpg",
+      "options": ["VShojoEN"]
+    },
+    {
+      "name": "",
+      "youtube_id": "UCsk_mKQyv_xdhahUBqoVhcg",
+      "options": ["VShojoEN"]
+    },
+    {
+      "name": "",
+      "youtube_id": "UCRfz2yOn8C7Jg5zq4Xi67-Q",
+      "options": ["VShojoEN"]
+    },
+    {
+      "name": "",
+      "youtube_id": "UCN5J_HKNGFCPtqAnSjBekcA",
+      "options": ["VShojoEN"]
+    },
+    {
+      "name": "",
+      "youtube_id": "UCnS5IYNyGKOti9cFlK5SefQ",
+      "options": ["VShojoEN"]
+    },
+    {
+      "name": "",
+      "youtube_id": "UC1yoRdFoFJaCY-AGfD9W0wQ",
+      "options": ["VShojoEN"]
+    },
+    {
+      "name": "",
+      "youtube_id": "UCVhRMzNWYcg8XDTgB9NFRTw",
+      "options": ["VShojoJP"]
+    },
+    {
+      "name": "",
+      "youtube_id": "UC9ruVYPv7yJmV0Rh0NKA-Lw",
+      "options": ["VShojoJP"]
+    },
+    {
+      "name": "",
+      "youtube_id": "UCyaxhmE-zyUIjMfCGQ75vlA",
+      "options": ["VShojoJP", "VShojo NOVA"]
+    },
+    {
+      "name": "",
+      "youtube_id": "UCIzgC9UfhG8eEbH7N5BBBWA",
+      "options": ["VShojoJP", "VShojo NOVA"]
+    },
+    {
+      "name": "",
+      "youtube_id": "UCPI-eyzOIfQiGE3JK7H8XEw",
+      "options": ["VShojoJP", "VShojo NOVA"]
+    },
+    {
+      "name": "",
+      "youtube_id": "UCtMiyDQJ97iax5wuwGhLzGg",
+      "options": ["VShojoJP", "VShojo NOVA"]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "metadata": {
+    "job": "VTuber",
+    "groups": "Neo-Porte",
+    "options": ["Neo-Porte 0期生", "Neo-Porte 1期生"],
+    "source": "https://neo-porte.jp/talent/"
+  },
+  "members": [
+    {
+      "name": "渋谷ハル",
+      "youtube_id": "UChLfthKoUV502J7gU9STArg",
+      "options": ["Neo-Porte 0期生"]
+    },
+    {
+      "name": "白雪レイド",
+      "youtube_id": "UCIu-aUArYq_H84dBpCAokMA",
+      "options": ["Neo-Porte 0期生"]
+    }
+  ]
+}
