@@ -1,0 +1,37 @@
+{
+  "metadata": {},
+  "job": [
+    {
+      "name": "ホロライブ",
+      "source": "https://hololive.hololivepro.com/talents"
+    },
+    {
+      "name": "にじさんじ",
+      "source": "https://www.nijisanji.jp/talents"
+    },
+    {
+      "name": "VShojo",
+      "source": "https://www.vshojo.com/"
+    },
+    {
+      "name": "ぶいすぽっ！",
+      "source": "https://store.vspo.jp/collections/members"
+    },
+    {
+      "name": ".LIVE",
+      "source": "https://vrlive.party/member/"
+    },
+    {
+      "name": "Neo-Porte",
+      "source": "https://neo-porte.jp/talent/"
+    },
+    {
+      "name": "登龍門BOX",
+      "source": "https://www.vmon.jp/box-talents"
+    },
+    {
+      "name": "個人勢",
+      "source": null
+    }
+  ]
+}

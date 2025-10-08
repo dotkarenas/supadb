@@ -3,7 +3,7 @@
     "job": "VTuber",
     "groups": "VShojo",
     "options": ["VShojoEN", "VShojoJP", "VShojo NOVA"],
-    "source": "https://www.vshojo.com/"
+    "source": "https://www.vshojo.com"
   },
   "members": [
     {

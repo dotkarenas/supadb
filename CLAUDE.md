@@ -6,6 +6,21 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is a data repository for managing VTuber information using JSON-based structured data. The repository contains metadata and member information for various VTuber groups, which can be synced to a Supabase database.
 
+## Setup
+
+### Install Dependencies
+```bash
+npm install
+```
+
+### Environment Variables
+Create `.env` file with:
+```bash
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
+SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
+YOUTUBE_API_KEY=your_youtube_api_key
+```
+
 ## Commands
 
 ### Validation
@@ -108,3 +123,16 @@ The bulk-create script is idempotent:
 - Updates existing threads if name, YouTube title, or tags changed
 - Skips unchanged threads
 - Reports summary (success/skipped/failed counts)
+
+## Troubleshooting
+
+### YouTube API Quota
+- The script includes 100ms delay between API calls to avoid quota issues
+- If you hit quota limits, wait or apply for increased quota
+- Channel ID format: `UCxxxxxxxxxxxxxxxxxxx` (22 chars after UC)
+- Handle format: `@username`
+
+### Common Validation Errors
+- `youtube_id` must match pattern: `^(UC[a-zA-Z0-9_-]{22}|@[a-zA-Z0-9_-]+)$`
+- Required fields: `metadata.job`, `metadata.groups`, `member.name`, `member.youtube_id`
+- Optional fields can be `null` or array of strings
