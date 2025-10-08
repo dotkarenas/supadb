@@ -221,14 +221,22 @@ async function createThread(
 
     let needsUpdate = false;
 
-    // 1. Update name if different
+    console.log(`   ℹ️  Synchronizing with data.json...`);
+
+    // 1. Get current thread data
     const { data: currentThread } = await supabase
       .from("threads")
-      .select("name")
+      .select("name, youtube_title")
       .eq("id", existingThread.id)
       .single();
 
-    if (currentThread && currentThread.name !== member.name) {
+    if (!currentThread) {
+      console.error(`❌ Failed to fetch current thread data`);
+      return false;
+    }
+
+    // 2. Update name if different
+    if (currentThread.name !== member.name) {
       console.log(
         `   ℹ️  Updating name: "${currentThread.name}" → "${member.name}"`,
       );
@@ -245,46 +253,82 @@ async function createThread(
       needsUpdate = true;
     }
 
-    // 2. Check if thread has tags
-    const { data: existingTags } = await supabase
-      .from("thread_tags")
-      .select("tag_id")
-      .eq("thread_id", existingThread.id);
-
-    if (existingTags && existingTags.length > 0) {
-      if (!needsUpdate) {
-        console.log(
-          `   ℹ️  Thread already has ${existingTags.length} tag(s), skipping`,
-        );
-        return true;
-      }
-      console.log(`   ℹ️  Thread already has ${existingTags.length} tag(s)`);
-      console.log(`   ✅ Updated thread for ${member.name}`);
-      return true;
-    }
-
-    // 3. If no tags, add them
-    console.log(`   ℹ️  Thread has no tags, adding tags...`);
-
-    const tagNames: string[] = [];
-    if (metadata.job) tagNames.push(metadata.job);
-    if (metadata.groups) tagNames.push(metadata.groups);
-    if (member.options && Array.isArray(member.options)) {
-      tagNames.push(...member.options);
-    }
-
-    if (tagNames.length > 0) {
-      const tagsSuccess = await associateTagsWithThread(
-        existingThread.id,
-        tagNames,
+    // 3. Update youtube_title if different
+    if (currentThread.youtube_title !== channelInfo.title) {
+      console.log(
+        `   ℹ️  Updating YouTube title: "${currentThread.youtube_title}" → "${channelInfo.title}"`,
       );
-      if (!tagsSuccess) {
-        console.error(
-          `❌ Failed to associate tags for existing thread ${member.name}`,
-        );
+      const { error: updateTitleError } = await supabase
+        .from("threads")
+        .update({ youtube_title: channelInfo.title })
+        .eq("id", existingThread.id);
+
+      if (updateTitleError) {
+        console.error(`❌ Failed to update youtube_title:`, updateTitleError);
         return false;
       }
-      console.log(`   ✓ Tags associated: ${tagNames.join(", ")}`);
+      console.log(`   ✓ YouTube title updated`);
+      needsUpdate = true;
+    }
+
+    // 4. Synchronize tags (delete old, add new)
+    // Build expected tag names from data.json
+    const expectedTagNames: string[] = [];
+    if (metadata.job) expectedTagNames.push(metadata.job);
+    if (metadata.groups) expectedTagNames.push(metadata.groups);
+    if (member.options && Array.isArray(member.options)) {
+      expectedTagNames.push(...member.options);
+    }
+
+    // Get current tags
+    const { data: currentThreadTags } = await supabase
+      .from("thread_tags")
+      .select("tag_id, tags(name)")
+      .eq("thread_id", existingThread.id);
+
+    const currentTagNames =
+      currentThreadTags?.map((tt: any) => tt.tags?.name).filter(Boolean) || [];
+
+    // Check if tags need to be updated
+    const tagsMatch =
+      expectedTagNames.length === currentTagNames.length &&
+      expectedTagNames.every((tag) => currentTagNames.includes(tag));
+
+    if (!tagsMatch) {
+      console.log(
+        `   ℹ️  Updating tags: [${currentTagNames.join(", ")}] → [${expectedTagNames.join(", ")}]`,
+      );
+
+      // Delete all existing thread_tags
+      const { error: deleteTagsError } = await supabase
+        .from("thread_tags")
+        .delete()
+        .eq("thread_id", existingThread.id);
+
+      if (deleteTagsError) {
+        console.error(`❌ Failed to delete old tags:`, deleteTagsError);
+        return false;
+      }
+
+      // Add new tags
+      if (expectedTagNames.length > 0) {
+        const tagsSuccess = await associateTagsWithThread(
+          existingThread.id,
+          expectedTagNames,
+        );
+        if (!tagsSuccess) {
+          console.error(`❌ Failed to associate new tags`);
+          return false;
+        }
+      }
+
+      console.log(`   ✓ Tags synchronized`);
+      needsUpdate = true;
+    }
+
+    if (!needsUpdate) {
+      console.log(`   ℹ️  No changes needed, skipping`);
+      return true;
     }
 
     console.log(`   ✅ Updated thread for ${member.name}`);
