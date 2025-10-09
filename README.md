@@ -31,19 +31,19 @@ YOUTUBE_API_KEY=your_youtube_api_key
 ### Validate Data
 
 ```bash
-npm run validate -- data/VTuber/{group_name}/members.json
+npm run validate -- data/{job_name}/{group_name}/members.json
 ```
 
 ### Sync to Supabase
 
 **Development:**
 ```bash
-npm run bulk-create:development data/VTuber/{group_name}/members.json
+npm run bulk-create:development data/{job_name}/{group_name}/members.json
 ```
 
 **Production:**
 ```bash
-npm run bulk-create:production data/VTuber/{group_name}/members.json
+npm run bulk-create:production data/{job_name}/{group_name}/members.json
 ```
 
 ## Contributing
@@ -51,8 +51,8 @@ npm run bulk-create:production data/VTuber/{group_name}/members.json
 ### Adding or Updating VTuber Data
 
 1. Fork this repository
-2. Add or edit JSON files in `data/VTuber/{group_name}/members.json`
-3. Validate your changes: `npm run validate -- data/VTuber/{group_name}/members.json`
+2. Add or edit JSON files in `data/{job_name}/{group_name}/members.json`
+3. Validate your changes: `npm run validate -- data/{job_name}/{group_name}/members.json`
 4. Submit a pull request
 
 ### Data Structure
@@ -71,7 +71,7 @@ Each `members.json` follows this schema:
     {
       "name": "Name",
       "youtube_id": "UC... or @handle",
-      "options": ["Member-specific tags"]
+      "options": ["Optional tags"]
     }
   ]
 }
