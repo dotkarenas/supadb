@@ -4,7 +4,7 @@ The database of [supaboards.com](https://supaboards.com)
 
 ## Overview
 
-This is a data repository for managing VTuber information using JSON-based structured data. The repository contains metadata and member information for various VTuber groups, which can be synced to a Supabase database.
+This is a data repository for managing VTuber, AVTuber information using JSON-based structured data. The repository contains metadata and member information for various VTuber, AVTuber groups, which can be synced to a Supabase database.
 
 ## Requirements
 
@@ -16,7 +16,7 @@ This is a data repository for managing VTuber information using JSON-based struc
 npm install
 ```
 
-### Environment Variables
+### 🔒 Environment Variables
 
 Create `.env.local` (for development) and `.env.production` (for production):
 
@@ -34,7 +34,7 @@ YOUTUBE_API_KEY=your_youtube_api_key
 npm run validate -- data/{job_name}/{group_name}/members.json
 ```
 
-### Sync to Supabase
+### 🔒 Sync to Supabase
 
 **Development:**
 ```bash
@@ -48,7 +48,7 @@ npm run bulk-create:production data/{job_name}/{group_name}/members.json
 
 ## Contributing
 
-### Adding or Updating VTuber Data
+### Adding or Updating Data
 
 1. Fork this repository
 2. Add or edit JSON files in `data/{job_name}/{group_name}/members.json`
