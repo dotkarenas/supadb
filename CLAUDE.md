@@ -14,7 +14,8 @@ npm install
 ```
 
 ### Environment Variables
-Create `.env` file with:
+
+Create `.env.local` (for development) and `.env.production` (for production) files with:
 ```bash
 NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
 SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
@@ -30,9 +31,17 @@ npm run validate -- data/VTuber/{group_name}/data.json
 Validates a data.json file against the JSON schema using AJV.
 
 ### Bulk Thread Creation
+
+**Development (Local Supabase)**
 ```bash
-npm run bulk-create data/VTuber/{group_name}/data.json
+npm run bulk-create:development data/VTuber/{group_name}/data.json
 ```
+
+**Production**
+```bash
+npm run bulk-create:production data/VTuber/{group_name}/data.json
+```
+
 Syncs VTuber data to Supabase:
 - Creates threads in the `threads` table with YouTube channel info and avatars
 - Updates existing threads if data has changed (name, YouTube title, tags)
@@ -67,7 +76,7 @@ When syncing existing threads, the script compares current tags with expected ta
 
 ## Environment Variables
 
-Required in `.env`:
+Required in `.env.local` (development) and `.env.production` (production):
 - `NEXT_PUBLIC_SUPABASE_URL`: Supabase project URL
 - `SUPABASE_SERVICE_ROLE_KEY`: Service role key for admin operations
 - `YOUTUBE_API_KEY`: YouTube Data API v3 key
@@ -110,7 +119,9 @@ Each `data.json` follows this schema:
 2. Copy `data/template.json` as starting point
 3. Fill in metadata and members
 4. Validate: `npm run validate -- data/VTuber/{group_name}/data.json`
-5. Sync to Supabase: `npm run bulk-create data/VTuber/{group_name}/data.json`
+5. Sync to Supabase:
+   - Development: `npm run bulk-create:development data/VTuber/{group_name}/data.json`
+   - Production: `npm run bulk-create:production data/VTuber/{group_name}/data.json`
 
 ### Updating Existing Data
 1. Edit `data/VTuber/{group_name}/data.json`

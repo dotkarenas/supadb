@@ -5,8 +5,13 @@ import * as dotenv from "dotenv";
 import * as fs from "fs";
 import * as path from "path";
 
-// Load environment variables
-dotenv.config();
+// Load environment variables based on NODE_ENV
+const env = process.env.NODE_ENV || "development";
+const envFile = env === "production" ? ".env.production" : ".env.local";
+dotenv.config({ path: envFile });
+
+console.log(`🔧 Environment: ${env}`);
+console.log(`📄 Loaded env file: ${envFile}\n`);
 
 // Environment variables validation
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
