@@ -26,20 +26,20 @@ YOUTUBE_API_KEY=your_youtube_api_key
 
 ### Validation
 ```bash
-npm run validate -- data/VTuber/{group_name}/data.json
+npm run validate -- data/VTuber/{group_name}/members.json
 ```
-Validates a data.json file against the JSON schema using AJV.
+Validates a members.json file against the JSON schema using AJV.
 
 ### Bulk Thread Creation
 
 **Development (Local Supabase)**
 ```bash
-npm run bulk-create:development data/VTuber/{group_name}/data.json
+npm run bulk-create:development data/VTuber/{group_name}/members.json
 ```
 
 **Production**
 ```bash
-npm run bulk-create:production data/VTuber/{group_name}/data.json
+npm run bulk-create:production data/VTuber/{group_name}/members.json
 ```
 
 Syncs VTuber data to Supabase:
@@ -55,7 +55,7 @@ Syncs VTuber data to Supabase:
 ### Data Layer
 - `data/schema.json`: JSON Schema defining the structure for all VTuber data
 - `data/template.json`: Template for creating new group data files
-- `data/VTuber/{group_name}/data.json`: Per-group VTuber data files
+- `data/VTuber/{group_name}/members.json`: Per-group VTuber member data files
 
 ### Supabase Integration
 The `bulk-create-threads.ts` script integrates with Supabase:
@@ -72,7 +72,7 @@ Tags are automatically created from:
 2. `metadata.groups` (e.g., "ホロライブ")
 3. `member.options` (e.g., ["ホロライブ 0期生"])
 
-When syncing existing threads, the script compares current tags with expected tags from data.json and updates accordingly.
+When syncing existing threads, the script compares current tags with expected tags from members.json and updates accordingly.
 
 ## Environment Variables
 
@@ -83,7 +83,7 @@ Required in `.env.local` (development) and `.env.production` (production):
 
 ## Data Structure
 
-Each `data.json` follows this schema:
+Each `members.json` follows this schema:
 ```json
 {
   "metadata": {
@@ -118,13 +118,13 @@ Each `data.json` follows this schema:
 1. Create directory: `data/VTuber/{group_name}/`
 2. Copy `data/template.json` as starting point
 3. Fill in metadata and members
-4. Validate: `npm run validate -- data/VTuber/{group_name}/data.json`
+4. Validate: `npm run validate -- data/VTuber/{group_name}/members.json`
 5. Sync to Supabase:
-   - Development: `npm run bulk-create:development data/VTuber/{group_name}/data.json`
-   - Production: `npm run bulk-create:production data/VTuber/{group_name}/data.json`
+   - Development: `npm run bulk-create:development data/VTuber/{group_name}/members.json`
+   - Production: `npm run bulk-create:production data/VTuber/{group_name}/members.json`
 
 ### Updating Existing Data
-1. Edit `data/VTuber/{group_name}/data.json`
+1. Edit `data/VTuber/{group_name}/members.json`
 2. Validate changes against schema
 3. Re-run bulk-create to sync updates (script handles updates automatically)
 

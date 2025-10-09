@@ -226,7 +226,7 @@ async function createThread(
 
     let needsUpdate = false;
 
-    console.log(`   ℹ️  Synchronizing with data.json...`);
+    console.log(`   ℹ️  Synchronizing with members.json...`);
 
     // 1. Get current thread data
     const { data: currentThread } = await supabase
@@ -277,7 +277,7 @@ async function createThread(
     }
 
     // 4. Synchronize tags (delete old, add new)
-    // Build expected tag names from data.json
+    // Build expected tag names from members.json
     const expectedTagNames: string[] = [];
     if (metadata.job) expectedTagNames.push(metadata.job);
     if (metadata.groups) expectedTagNames.push(metadata.groups);
@@ -439,10 +439,10 @@ async function main() {
 
   if (args.length === 0) {
     console.error(
-      "❌ Usage: tsx scripts/bulk-create-threads.ts <path-to-data.json>",
+      "❌ Usage: tsx scripts/bulk-create-threads.ts <path-to-members.json>",
     );
     console.error(
-      "   Example: tsx scripts/bulk-create-threads.ts data/VTuber/ホロライブ/data.json",
+      "   Example: tsx scripts/bulk-create-threads.ts data/VTuber/ホロライブ/members.json",
     );
     process.exit(1);
   }
