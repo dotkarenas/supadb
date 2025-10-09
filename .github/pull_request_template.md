@@ -1,7 +1,9 @@
 ## What
 
-<!-- What are you adding or updating? -->
+- [ ] add data
+- [ ] update data
+- [ ] others
 
-## Source
+## Notes
 
-<!-- Official URL (if any) -->
+<!-- If any -->
