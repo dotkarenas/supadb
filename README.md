@@ -62,14 +62,14 @@ Each `members.json` follows this schema:
 ```json
 {
   "metadata": {
-    "job": "VTuber",
+    "job": "Job Name",
     "groups": "Group Name",
     "options": ["Optional tags"],
     "source": "Official website URL"
   },
   "members": [
     {
-      "name": "VTuber Name",
+      "name": "Name",
       "youtube_id": "UC... or @handle",
       "options": ["Member-specific tags"]
     }
@@ -92,7 +92,7 @@ Each `members.json` follows this schema:
 
 - `data/schema.json`: JSON Schema definition
 - `data/template.json`: Template for new groups
-- `data/VTuber/{group_name}/members.json`: VTuber data files
+- `data/{job_name}/{group_name}/members.json`: data files
 
 ## License
 
