@@ -149,7 +149,3 @@ data/
 	<tbody>
 </table>
 <!-- readme: contributors -end -->
-
-## License
-
-This project is open source.
