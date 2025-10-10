@@ -1,0 +1,46 @@
+{
+  "metadata": {
+    "job": "AVTuber",
+    "group": "ともなりっ！",
+    "options": ["ともなりっ！0期生", "ともなりっ！1期生"],
+    "source": "https://tomonari.weebly.com/cast.html"
+  },
+  "members": [
+    {
+      "name": "天乃てん",
+      "youtube_id": "",
+      "options": ["ともなりっ！0期生"],
+      "status": "inactive"
+    },
+    {
+      "name": "ルイズ･ブランシュ",
+      "youtube_id": "UCww0b36JjRX8wK7NUj0Lw0Q",
+      "options": ["ともなりっ！0期生"],
+      "status": "inactive"
+    },
+    {
+      "name": "狼牙せら",
+      "youtube_id": "UCa2HuzAYLZXOW6_0QJRY-Pg",
+      "options": ["ともなりっ！0期生"],
+      "status": "active"
+    },
+    {
+      "name": "緋煙マイン",
+      "youtube_id": "",
+      "options": ["ともなりっ！1期生"],
+      "status": "active"
+    },
+    {
+      "name": "城咲メリミ",
+      "youtube_id": "",
+      "options": ["ともなりっ！1期生"],
+      "status": "active"
+    },
+    {
+      "name": "青華とわ",
+      "youtube_id": "",
+      "options": ["ともなりっ！1期生"],
+      "status": "active"
+    }
+  ]
+}
