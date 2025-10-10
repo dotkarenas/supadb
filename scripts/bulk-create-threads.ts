@@ -37,6 +37,7 @@ interface DataJson {
   members: Array<{
     name: string;
     youtube_id: string;
+    status?: "active" | "inactive";
     options: string[] | null;
   }>;
 }
@@ -196,6 +197,7 @@ async function createThread(
   member: {
     name: string;
     youtube_id: string;
+    status?: "active" | "inactive";
     options: string[] | null;
   },
   metadata: {
@@ -204,6 +206,13 @@ async function createThread(
   },
 ): Promise<boolean> {
   console.log(`\n📝 Processing: ${member.name} (${member.youtube_id})`);
+
+  // Check if member is inactive or has no YouTube channel
+  const status = member.status || "active";
+  if (status === "inactive" || !member.youtube_id) {
+    console.log(`   ⚠️  Skipping: ${status === "inactive" ? "inactive status" : "no youtube_id"}`);
+    return true; // Return true to count as "skipped" not "failed"
+  }
 
   // 1. Get YouTube channel info
   const channelInfo = await getChannelInfo(member.youtube_id);

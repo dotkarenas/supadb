@@ -69,6 +69,7 @@ npm run bulk-create:production data/VTuber/{group_name}/members.json
 Syncs VTuber data to Supabase:
 - Creates threads in the `threads` table with YouTube channel info and avatars
 - Updates existing threads if data has changed (name, YouTube title, tags)
+- Skips members with `status: "inactive"` or empty `youtube_id`
 - Uploads channel thumbnails to Supabase Storage (`threads` bucket)
 - Associates tags (job, group, options) with threads via `thread_tags` table
 - Uses YouTube Data API v3 to fetch channel metadata
@@ -129,6 +130,7 @@ Each `members.json` follows this schema:
     {
       "name": "VTuber Name",
       "youtube_id": "UC... or @handle",
+      "status": "active",
       "options": ["Member-specific tags"]
     }
   ]
@@ -141,9 +143,14 @@ Each `members.json` follows this schema:
 
 ## Validation Rules
 
-- `youtube_id` must match: `^(UC[a-zA-Z0-9_-]{22}|@[a-zA-Z0-9_-]+)$`
+- `youtube_id` must match: `^(UC[a-zA-Z0-9_-]{22}|@[a-zA-Z0-9_-]+)?$` (can be empty string)
+- `status` must be either `"active"` or `"inactive"` (defaults to `"active"`)
 - Required fields: `metadata.job`, `metadata.group`, `member.name`, `member.youtube_id`
-- Optional fields: `metadata.options`, `metadata.source`, `member.options`
+- Optional fields: `metadata.options`, `metadata.source`, `member.status`, `member.options`
+
+### Member Status
+- **`active`**: Member has a YouTube channel and will be synced to Supabase
+- **`inactive`**: Member has no YouTube channel or is not currently active (will be skipped during sync)
 
 ## Working with Data
 

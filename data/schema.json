@@ -35,7 +35,12 @@
           },
           "youtube_id": {
             "type": "string",
-            "pattern": "^(UC[a-zA-Z0-9_-]{22}|@[a-zA-Z0-9_-]+)$"
+            "pattern": "^(UC[a-zA-Z0-9_-]{22}|@[a-zA-Z0-9_-]+)?$"
+          },
+          "status": {
+            "type": "string",
+            "enum": ["active", "inactive"],
+            "default": "active"
           },
           "options": {
             "type": ["array", "null"],
