@@ -151,6 +151,13 @@ data/
                     <sub><b>dotkarenas</b></sub>
                 </a>
             </td>
+            <td align="center">
+                <a href="https://github.com/yourous">
+                    <img src="https://avatars.githubusercontent.com/u/92163468?v=4" width="100;" alt="yourous"/>
+                    <br />
+                    <sub><b>nasufuu</b></sub>
+                </a>
+            </td>
 		</tr>
 	<tbody>
 </table>
