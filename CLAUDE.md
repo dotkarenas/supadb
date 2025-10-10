@@ -34,7 +34,7 @@ Automatically generates/updates metadata files based on directory structure:
 
 **Behavior**:
 - Scans all directories under `data/` to detect jobs and groups
-- Extracts `metadata.groups` and `metadata.source` from each `members.json`
+- Extracts `metadata.group` and `metadata.source` from each `members.json`
 - Sets `status: "completed"` for groups with existing `members.json`
 - Preserves `status: "pending"` entries for groups planned but not yet collected
 - Run this before committing changes to keep metadata in sync
@@ -93,7 +93,7 @@ The `bulk-create-threads.ts` script integrates with Supabase:
 ### Tag System
 Tags are automatically created from:
 1. `metadata.job` (e.g., "VTuber")
-2. `metadata.groups` (e.g., "ホロライブ")
+2. `metadata.group` (e.g., "ホロライブ")
 3. `member.options` (e.g., ["ホロライブ 0期生"])
 
 When syncing existing threads, the script compares current tags with expected tags from members.json and updates accordingly.
@@ -112,7 +112,7 @@ Each `members.json` follows this schema:
 {
   "metadata": {
     "job": "VTuber",
-    "groups": "Group Name",
+    "group": "Group Name",
     "options": ["Optional tags"],
     "source": "Official website URL"
   },
@@ -133,7 +133,7 @@ Each `members.json` follows this schema:
 ## Validation Rules
 
 - `youtube_id` must match: `^(UC[a-zA-Z0-9_-]{22}|@[a-zA-Z0-9_-]+)$`
-- Required fields: `metadata.job`, `metadata.groups`, `member.name`, `member.youtube_id`
+- Required fields: `metadata.job`, `metadata.group`, `member.name`, `member.youtube_id`
 - Optional fields: `metadata.options`, `metadata.source`, `member.options`
 
 ## Working with Data

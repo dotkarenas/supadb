@@ -1,7 +1,7 @@
 {
   "metadata": {
     "job": "VTuber",
-    "groups": ".LIVE",
+    "group": ".LIVE",
     "options": null,
     "source": "https://vrlive.party/member/"
   },

@@ -1,8 +1,8 @@
 {
   "metadata": {
     "job": "VTuber",
-    "groups": "VAZ",
-    "options": [""],
+    "group": "VAZ",
+    "options": null,
     "source": "https://vaz.co.jp/talent-category/vtuber/"
   },
   "members": [

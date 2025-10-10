@@ -7,7 +7,7 @@ import * as path from "path";
 interface MembersJson {
   metadata: {
     job: string;
-    groups: string;
+    group: string;
     options?: string[] | null;
     source?: string | null;
   };
@@ -202,7 +202,7 @@ function generateGroupsJson(jobName: string, groupNames: string[]): GroupsJson {
       continue;
     }
 
-    const groupDisplayName = membersJson.metadata.groups || groupName;
+    const groupDisplayName = membersJson.metadata.group || groupName;
     processedGroupNames.add(groupDisplayName);
 
     // Check if this group already exists in the map

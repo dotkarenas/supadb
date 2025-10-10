@@ -30,7 +30,7 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, {
 interface DataJson {
   metadata: {
     job: string;
-    groups: string;
+    group: string;
     options: string[] | null;
     source: string | null;
   };
@@ -75,7 +75,7 @@ async function getChannelInfo(youtubeId: string): Promise<{
     }
 
     const response = await fetch(url);
-    const data: YouTubeChannelResponse = await response.json();
+    const data = (await response.json()) as YouTubeChannelResponse;
 
     if (!response.ok) {
       console.error(
@@ -200,7 +200,7 @@ async function createThread(
   },
   metadata: {
     job: string;
-    groups: string;
+    group: string;
   },
 ): Promise<boolean> {
   console.log(`\n📝 Processing: ${member.name} (${member.youtube_id})`);
@@ -280,7 +280,7 @@ async function createThread(
     // Build expected tag names from members.json
     const expectedTagNames: string[] = [];
     if (metadata.job) expectedTagNames.push(metadata.job);
-    if (metadata.groups) expectedTagNames.push(metadata.groups);
+    if (metadata.group) expectedTagNames.push(metadata.group);
     if (member.options && Array.isArray(member.options)) {
       expectedTagNames.push(...member.options);
     }
@@ -410,8 +410,8 @@ async function createThread(
   }
 
   // Add group tag (e.g., "ホロライブ")
-  if (metadata.groups) {
-    tagNames.push(metadata.groups);
+  if (metadata.group) {
+    tagNames.push(metadata.group);
   }
 
   // Add member-specific tags (e.g., ["ホロライブ 0期生"])
@@ -467,7 +467,7 @@ async function main() {
 
   console.log(`\n🚀 Starting bulk thread creation`);
   console.log(`📁 File: ${dataFilePath}`);
-  console.log(`👥 Group: ${data.metadata.groups}`);
+  console.log(`👥 Group: ${data.metadata.group}`);
   console.log(`📊 Total members: ${data.members.length}\n`);
 
   let successCount = 0;
@@ -481,7 +481,7 @@ async function main() {
 
     const result = await createThread(member, {
       job: data.metadata.job,
-      groups: data.metadata.groups,
+      group: data.metadata.group,
     });
 
     if (result) {

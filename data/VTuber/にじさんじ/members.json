@@ -1,7 +1,7 @@
 {
   "metadata": {
     "job": "VTuber",
-    "groups": "にじさんじ",
+    "group": "にじさんじ",
     "options": ["NIJISANJI EN"],
     "source": "https://www.nijisanji.jp/talents"
   },

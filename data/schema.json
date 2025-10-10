@@ -5,12 +5,12 @@
   "properties": {
     "metadata": {
       "type": "object",
-      "required": ["job", "groups"],
+      "required": ["job", "group"],
       "properties": {
         "job": {
           "type": "string"
         },
-        "groups": {
+        "group": {
           "type": "string"
         },
         "options": {

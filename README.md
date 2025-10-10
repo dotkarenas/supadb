@@ -85,7 +85,7 @@ Each `members.json` follows this schema:
 ### Validation Rules
 
 - `youtube_id` must match: `^(UC[a-zA-Z0-9_-]{22}|@[a-zA-Z0-9_-]+)$`
-- Required fields: `metadata.job`, `metadata.groups`, `member.name`, `member.youtube_id`
+- Required fields: `metadata.job`, `metadata.group`, `member.name`, `member.youtube_id`
 - Optional fields: `metadata.options`, `metadata.source`, `member.options`
 
 ## Data Structure

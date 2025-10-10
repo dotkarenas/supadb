@@ -1,7 +1,7 @@
 {
   "metadata": {
     "job": "VTuber",
-    "groups": "VShojo",
+    "group": "VShojo",
     "options": ["VShojoEN", "VShojoJP", "VShojo NOVA"],
     "source": "https://www.vshojo.com"
   },
