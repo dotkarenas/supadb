@@ -1,0 +1,22 @@
+{
+  "metadata": {
+    "job": "AVTuber",
+    "group": "わんだーらすと",
+    "options": null,
+    "source": "https://www.circle-wanderlust.com/"
+  },
+  "members": [
+    {
+      "name": "藤兎Fullmoon",
+      "youtube_id": "UCHp3W3FXdfGowMCVbg8N6vQ",
+      "status": "active",
+      "options": null
+    },
+    {
+      "name": "霧月Iris",
+      "youtube_id": null,
+      "status": "inactive",
+      "options": null
+    }
+  ]
+}
