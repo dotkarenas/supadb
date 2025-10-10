@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "validate": "ajv validate -s data/schema.json -d",
+    "update-metadata": "tsx scripts/update-metadata.ts",
     "bulk-create:development": "NODE_ENV=development tsx scripts/bulk-create-threads.ts",
     "bulk-create:production": "NODE_ENV=production tsx scripts/bulk-create-threads.ts",
     "test": "echo \"Error: no test specified\" && exit 1"

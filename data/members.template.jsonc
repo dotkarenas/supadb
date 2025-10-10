@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    // required
+    // see: data/jobs.json
+    // type: string
+    // ex: VTuber, AVTuber...
+    "job": "<JOB_NAME>",
+    // required
+    // see: data/{job_name}/groups.json
+    // type: string
+    // ex: ホロライブ, にじさんじ...
+    "group": "<GROUP_NAME>",
+    // optional
+    // type: array
+    // ex: ホロライブ 0期生, ホロライブ1期生...
+    "options": ["<OPTION_NAME>"],
+    // optional
+    // type: string | null
+    // ex: "https://hololive.hololivepro.com/talents" | null
+    "source": "<SOURCE_URL> | null"
+  },
+  "members": [
+    {
+      // required
+      // type: string
+      // ex: 兎田ぺこら
+      "name": "<MEMBER_NAME>",
+      // required
+      // type: string
+      // ex: UC1DCedRgGHBdm81E1llLhOQ
+      "youtube_id": "<YOUTUBE_ID>",
+      // optional
+      // type: string[] | null
+      // ex: ["ホロライブ 3期生"] or null
+      "options": null
+    },
+    {
+      "name": "",
+      "youtube_id": "",
+      "options": null
+    }
+  ]
+}

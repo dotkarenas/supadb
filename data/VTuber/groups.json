@@ -2,40 +2,49 @@
   "metadata": {},
   "groups": [
     {
-      "name": "ホロライブ",
-      "source": "https://hololive.hololivepro.com/talents"
-    },
-    {
-      "name": "にじさんじ",
-      "source": "https://www.nijisanji.jp/talents"
-    },
-    {
-      "name": "VShojo",
-      "source": "https://www.vshojo.com/"
-    },
-    {
-      "name": "ぶいすぽっ！",
-      "source": "https://store.vspo.jp/collections/members"
-    },
-    {
-      "name": ".LIVE",
-      "source": "https://vrlive.party/member/"
-    },
-    {
       "name": "Neo-Porte",
-      "source": "https://neo-porte.jp/talent/"
-    },
-    {
-      "name": "登龍門BOX",
-      "source": "https://www.vmon.jp/box-talents"
+      "source": "https://neo-porte.jp/talent/",
+      "status": "completed"
     },
     {
       "name": "VAZ",
-      "source": "https://vaz.co.jp/talent-category/vtuber/"
+      "source": "https://vaz.co.jp/talent-category/vtuber/",
+      "status": "completed"
+    },
+    {
+      "name": "VShojo",
+      "source": "https://www.vshojo.com",
+      "status": "completed"
+    },
+    {
+      "name": "にじさんじ",
+      "source": "https://www.nijisanji.jp/talents",
+      "status": "completed"
+    },
+    {
+      "name": "ぶいすぽっ！",
+      "source": "https://store.vspo.jp/collections/members",
+      "status": "completed"
+    },
+    {
+      "name": "ホロライブ",
+      "source": "https://hololive.hololivepro.com/talents",
+      "status": "completed"
     },
     {
       "name": "個人勢",
-      "source": null
+      "source": null,
+      "status": "completed"
+    },
+    {
+      "name": "登龍門BOX",
+      "source": "https://www.vmon.jp/box-talents",
+      "status": "completed"
+    },
+    {
+      "name": ".LIVE",
+      "source": "https://vrlive.party/member/",
+      "status": "pending"
     }
   ]
 }

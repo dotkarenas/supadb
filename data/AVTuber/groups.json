@@ -2,192 +2,239 @@
   "metadata": {},
   "groups": [
     {
-      "name": "はにかむビースト！",
-      "source": "https://x.com/honeycome_bope"
-    },
-    {
-      "name": "ぴゅあえんじぇる",
-      "source": null
-    },
-    {
-      "name": "むちえちらいぶ",
-      "source": ""
-    },
-    {
-      "name": "ともなりっ！",
-      "source": ""
-    },
-    {
-      "name": "ぴゅあメロディ",
-      "source": ""
-    },
-    {
-      "name": "わんだーらすと",
-      "source": ""
-    },
-    {
-      "name": "Vanilla_Syrup",
-      "source": ""
-    },
-    {
-      "name": "ないとどりーみん",
-      "source": ""
-    },
-    {
-      "name": "みのりプロダクション",
-      "source": ""
-    },
-    {
-      "name": "あまゆめサークル",
-      "source": ""
-    },
-    {
-      "name": "ムネアツ",
-      "source": ""
-    },
-    {
-      "name": "あんくれぇと",
-      "source": ""
-    },
-    {
-      "name": "エレガントふわふわ",
-      "source": ""
-    },
-    {
-      "name": "こねくとぴあ",
-      "source": ""
-    },
-    {
-      "name": "プラベルーム",
-      "source": ""
-    },
-    {
-      "name": "Unreal Night Girls",
-      "source": ""
-    },
-    {
-      "name": "らぶ♡どる",
-      "source": ""
-    },
-    {
-      "name": "KisKill",
-      "source": ""
-    },
-    {
-      "name": "ポータルプロ",
-      "source": ""
-    },
-    {
-      "name": "Hlive",
-      "source": ""
-    },
-    {
       "name": "PROMISU",
-      "source": "https://www.promisu.live/talent"
-    },
-    {
-      "name": "はもゆり",
-      "source": ""
-    },
-    {
-      "name": "たまぷろじぇくと",
-      "source": ""
-    },
-    {
-      "name": "DeepHolic",
-      "source": ""
-    },
-    {
-      "name": "えもえちプロダクション",
-      "source": ""
-    },
-    {
-      "name": "ふりゅぷろ",
-      "source": ""
-    },
-    {
-      "name": "仮想茶房 花の宴",
-      "source": ""
-    },
-    {
-      "name": "PBB",
-      "source": ""
-    },
-    {
-      "name": "リアルサキュバスカンパニー",
-      "source": ""
-    },
-    {
-      "name": "RUDDER ONE",
-      "source": ""
-    },
-    {
-      "name": "らぶぁるふぁ",
-      "source": ""
-    },
-    {
-      "name": "海外",
-      "source": ""
+      "source": "https://www.promisu.live/talent",
+      "status": "completed"
     },
     {
       "name": "ぬれきゅーと",
-      "source": "https://nurecute.com/"
+      "source": "https://nurecute.com/",
+      "status": "completed"
     },
     {
-      "name": "To:R",
-      "source": ""
+      "name": "はにかむビースト！",
+      "source": "https://x.com/honeycome_bope",
+      "status": "completed"
     },
     {
-      "name": "ぱふぱふ××くらぶ",
-      "source": ""
-    },
-    {
-      "name": "ぷちさぽっ！",
-      "source": ""
-    },
-    {
-      "name": "MarbleCreators",
-      "source": ""
-    },
-    {
-      "name": "エメ・シスターズ",
-      "source": ""
-    },
-    {
-      "name": "ハーフトーンドット",
-      "source": ""
-    },
-    {
-      "name": "072inc",
-      "source": ""
-    },
-    {
-      "name": "PPP",
-      "source": ""
-    },
-    {
-      "name": "SugarPalette",
-      "source": ""
-    },
-    {
-      "name": "Mosaic Production",
-      "source": ""
-    },
-    {
-      "name": "サンドバッグ実験施設",
-      "source": ""
-    },
-    {
-      "name": "BLUE ROSE",
-      "source": ""
-    },
-    {
-      "name": "TeaTime",
-      "source": ""
+      "name": "ぴゅあえんじぇる",
+      "source": null,
+      "status": "completed"
     },
     {
       "name": "個人勢",
-      "source": ""
+      "source": null,
+      "status": "completed"
+    },
+    {
+      "name": "むちえちらいぶ",
+      "source": null,
+      "status": "pending"
+    },
+    {
+      "name": "ともなりっ！",
+      "source": "",
+      "status": "pending"
+    },
+    {
+      "name": "ぴゅあメロディ",
+      "source": "",
+      "status": "pending"
+    },
+    {
+      "name": "わんだーらすと",
+      "source": "",
+      "status": "pending"
+    },
+    {
+      "name": "Vanilla_Syrup",
+      "source": "",
+      "status": "pending"
+    },
+    {
+      "name": "ないとどりーみん",
+      "source": "",
+      "status": "pending"
+    },
+    {
+      "name": "みのりプロダクション",
+      "source": "",
+      "status": "pending"
+    },
+    {
+      "name": "あまゆめサークル",
+      "source": "",
+      "status": "pending"
+    },
+    {
+      "name": "ムネアツ",
+      "source": "",
+      "status": "pending"
+    },
+    {
+      "name": "あんくれぇと",
+      "source": "",
+      "status": "pending"
+    },
+    {
+      "name": "エレガントふわふわ",
+      "source": "",
+      "status": "pending"
+    },
+    {
+      "name": "こねくとぴあ",
+      "source": "",
+      "status": "pending"
+    },
+    {
+      "name": "プラベルーム",
+      "source": "",
+      "status": "pending"
+    },
+    {
+      "name": "Unreal Night Girls",
+      "source": "",
+      "status": "pending"
+    },
+    {
+      "name": "らぶ♡どる",
+      "source": "",
+      "status": "pending"
+    },
+    {
+      "name": "KisKill",
+      "source": "",
+      "status": "pending"
+    },
+    {
+      "name": "ポータルプロ",
+      "source": "",
+      "status": "pending"
+    },
+    {
+      "name": "Hlive",
+      "source": "",
+      "status": "pending"
+    },
+    {
+      "name": "はもゆり",
+      "source": "",
+      "status": "pending"
+    },
+    {
+      "name": "たまぷろじぇくと",
+      "source": "",
+      "status": "pending"
+    },
+    {
+      "name": "DeepHolic",
+      "source": "",
+      "status": "pending"
+    },
+    {
+      "name": "えもえちプロダクション",
+      "source": "",
+      "status": "pending"
+    },
+    {
+      "name": "ふりゅぷろ",
+      "source": "",
+      "status": "pending"
+    },
+    {
+      "name": "仮想茶房 花の宴",
+      "source": "",
+      "status": "pending"
+    },
+    {
+      "name": "PBB",
+      "source": "",
+      "status": "pending"
+    },
+    {
+      "name": "リアルサキュバスカンパニー",
+      "source": "",
+      "status": "pending"
+    },
+    {
+      "name": "RUDDER ONE",
+      "source": "",
+      "status": "pending"
+    },
+    {
+      "name": "らぶぁるふぁ",
+      "source": "",
+      "status": "pending"
+    },
+    {
+      "name": "海外",
+      "source": "",
+      "status": "pending"
+    },
+    {
+      "name": "To:R",
+      "source": "",
+      "status": "pending"
+    },
+    {
+      "name": "ぱふぱふ××くらぶ",
+      "source": "",
+      "status": "pending"
+    },
+    {
+      "name": "ぷちさぽっ！",
+      "source": "",
+      "status": "pending"
+    },
+    {
+      "name": "MarbleCreators",
+      "source": "",
+      "status": "pending"
+    },
+    {
+      "name": "エメ・シスターズ",
+      "source": "",
+      "status": "pending"
+    },
+    {
+      "name": "ハーフトーンドット",
+      "source": "",
+      "status": "pending"
+    },
+    {
+      "name": "072inc",
+      "source": "",
+      "status": "pending"
+    },
+    {
+      "name": "PPP",
+      "source": "",
+      "status": "pending"
+    },
+    {
+      "name": "SugarPalette",
+      "source": "",
+      "status": "pending"
+    },
+    {
+      "name": "Mosaic Production",
+      "source": "",
+      "status": "pending"
+    },
+    {
+      "name": "サンドバッグ実験施設",
+      "source": "",
+      "status": "pending"
+    },
+    {
+      "name": "BLUE ROSE",
+      "source": "",
+      "status": "pending"
+    },
+    {
+      "name": "TeaTime",
+      "source": "",
+      "status": "pending"
     }
   ]
 }
