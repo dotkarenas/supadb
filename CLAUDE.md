@@ -26,7 +26,7 @@ cp .env.sample .env.production
 
 Then fill in the following values:
 ```bash
-NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
+SUPABASE_URL=your_supabase_project_url
 SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
 YOUTUBE_API_KEY=your_youtube_api_key
 ```
@@ -131,7 +131,7 @@ When syncing existing threads, the script compares current tags with expected ta
 ## Environment Variables
 
 Required in `.env.local` (development) and `.env.production` (production):
-- `NEXT_PUBLIC_SUPABASE_URL`: Supabase project URL
+- `SUPABASE_URL`: Supabase project URL
 - `SUPABASE_SERVICE_ROLE_KEY`: Service role key for admin operations
 - `YOUTUBE_API_KEY`: YouTube Data API v3 key
 

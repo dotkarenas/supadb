@@ -31,7 +31,7 @@ cp .env.sample .env.production
 Then fill in the following values:
 
 ```bash
-NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
+SUPABASE_URL=your_supabase_project_url
 SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
 YOUTUBE_API_KEY=your_youtube_api_key
 ```
