@@ -190,7 +190,7 @@ This helps track which groups you plan to collect.
 3. Fill in metadata and members
 4. Validate: `npm run validate -- data/{job_name}/{group_name}/members.json`
 
-#### 3. Update Metadata
+#### 3. Update Metadata (Required)
 ```bash
 npm run update-metadata
 ```
@@ -199,7 +199,9 @@ This automatically:
 - Updates `groups.json` with the new group
 - Preserves any existing entries you added manually
 
-#### 4. Generate Master File (Optional)
+**IMPORTANT:** This command must be run before committing changes. CI will verify that metadata files are up-to-date.
+
+#### 4. Generate Master File (Required)
 ```bash
 npm run update-master
 ```
@@ -208,7 +210,16 @@ This generates a consolidated `master.json` containing all members. Useful for:
 - Data analysis and reporting
 - External integrations
 
-#### 5. Sync to Supabase
+**IMPORTANT:** This command must be run before committing changes. CI will verify that master.json is up-to-date.
+
+#### 5. Commit Changes
+Commit all changes including generated files:
+- `data/jobs.json`
+- `data/{job_name}/groups.json`
+- `data/master.json`
+- `data/{job_name}/{group_name}/members.json`
+
+#### 6. Sync to Supabase
 - Development: `npm run sync-data:development`
 - Production: `npm run sync-data:production`
 

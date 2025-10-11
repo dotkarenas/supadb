@@ -95,10 +95,16 @@ The sync script:
 
 1. Fork this repository
 2. Create or edit JSON files in `data/{job_name}/{group_name}/members.json`
-3. Update metadata: `npm run update-metadata`
-4. Generate master file: `npm run update-master` (optional)
-5. Validate your changes: `npm run validate -- data/{job_name}/{group_name}/members.json`
+3. **Before committing**, run the following commands:
+   ```bash
+   npm run update-metadata
+   npm run update-master
+   ```
+4. Validate your changes: `npm run validate -- data/{job_name}/{group_name}/members.json`
+5. Commit all changes (including generated files)
 6. Submit a pull request
+
+**Note:** CI will automatically verify that metadata files are up-to-date. If you forget to run the update commands, the CI checks will fail and prompt you to run them.
 
 ### Data Structure
 
