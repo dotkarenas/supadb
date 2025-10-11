@@ -26,8 +26,17 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, {
   },
 });
 
+// Constants
+const DATA_DIR = path.resolve(process.cwd(), "data");
+const EXCLUDED_FILES = [
+  "schema.json",
+  "members.template.json",
+  "jobs.json",
+  "master.json",
+];
+
 // Types
-interface DataJson {
+interface MembersJson {
   metadata: {
     job: string;
     group: string;
@@ -55,7 +64,107 @@ interface YouTubeChannelResponse {
   }>;
 }
 
-// YouTube API helper
+interface GroupProcessResult {
+  jobName: string;
+  groupName: string;
+  success: number;
+  skipped: number;
+  failed: number;
+  total: number;
+}
+
+/**
+ * Check if path is a valid directory (not hidden)
+ */
+function isValidDirectory(dirPath: string): boolean {
+  try {
+    const stat = fs.statSync(dirPath);
+    const basename = path.basename(dirPath);
+    return stat.isDirectory() && !basename.startsWith(".");
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * Get all job directories from data/
+ */
+function getJobDirectories(): string[] {
+  const entries = fs.readdirSync(DATA_DIR);
+  const jobDirs: string[] = [];
+
+  for (const entry of entries) {
+    const fullPath = path.join(DATA_DIR, entry);
+
+    // Skip excluded files
+    if (EXCLUDED_FILES.includes(entry)) {
+      continue;
+    }
+
+    // Check if it's a valid directory
+    if (isValidDirectory(fullPath)) {
+      jobDirs.push(entry);
+    }
+  }
+
+  return jobDirs.sort();
+}
+
+/**
+ * Get all group directories with members.json from a job directory
+ */
+function getGroupDirectories(jobName: string): string[] {
+  const jobPath = path.join(DATA_DIR, jobName);
+  const entries = fs.readdirSync(jobPath);
+  const groupDirs: string[] = [];
+
+  for (const entry of entries) {
+    const fullPath = path.join(jobPath, entry);
+
+    // Skip groups.json
+    if (entry === "groups.json") {
+      continue;
+    }
+
+    // Check if it's a valid directory
+    if (isValidDirectory(fullPath)) {
+      // Check if members.json exists
+      const membersJsonPath = path.join(fullPath, "members.json");
+      if (fs.existsSync(membersJsonPath)) {
+        groupDirs.push(entry);
+      }
+    }
+  }
+
+  return groupDirs.sort();
+}
+
+/**
+ * Read and parse members.json
+ */
+function readMembersJson(jobName: string, groupName: string): MembersJson | null {
+  const membersJsonPath = path.join(
+    DATA_DIR,
+    jobName,
+    groupName,
+    "members.json",
+  );
+
+  try {
+    const content = fs.readFileSync(membersJsonPath, "utf-8");
+    return JSON.parse(content) as MembersJson;
+  } catch (error) {
+    console.error(
+      `❌ Failed to parse ${jobName}/${groupName}/members.json:`,
+      error,
+    );
+    return null;
+  }
+}
+
+/**
+ * Get YouTube channel info from YouTube Data API v3
+ */
 async function getChannelInfo(youtubeId: string): Promise<{
   channelId: string;
   title: string;
@@ -113,7 +222,9 @@ async function getChannelInfo(youtubeId: string): Promise<{
   }
 }
 
-// Download image and return as Blob
+/**
+ * Download image and return as Blob
+ */
 async function downloadImage(url: string): Promise<Blob | null> {
   try {
     const response = await fetch(url);
@@ -128,7 +239,9 @@ async function downloadImage(url: string): Promise<Blob | null> {
   }
 }
 
-// Get or create tag by name
+/**
+ * Get or create tag by name
+ */
 async function getOrCreateTag(tagName: string): Promise<string | null> {
   // First, try to find existing tag
   const { data: existingTag } = await supabase
@@ -156,7 +269,9 @@ async function getOrCreateTag(tagName: string): Promise<string | null> {
   return newTag.id;
 }
 
-// Associate tags with thread
+/**
+ * Associate tags with thread
+ */
 async function associateTagsWithThread(
   threadId: string,
   tagNames: string[],
@@ -191,7 +306,9 @@ async function associateTagsWithThread(
   return true;
 }
 
-// Create thread
+/**
+ * Create or update thread
+ */
 async function createThread(
   member: {
     name: string;
@@ -439,94 +556,144 @@ async function createThread(
   return true;
 }
 
-// Main function
-async function main() {
-  const args = process.argv.slice(2);
+/**
+ * Process a single group
+ */
+async function processGroup(
+  jobName: string,
+  groupName: string,
+): Promise<GroupProcessResult> {
+  const result: GroupProcessResult = {
+    jobName,
+    groupName,
+    success: 0,
+    skipped: 0,
+    failed: 0,
+    total: 0,
+  };
 
-  if (args.length === 0) {
-    console.error(
-      "❌ Usage: tsx scripts/bulk-create-threads.ts <path-to-members.json>",
-    );
-    console.error(
-      "   Example: tsx scripts/bulk-create-threads.ts data/VTuber/ホロライブ/members.json",
-    );
-    process.exit(1);
+  console.log(`\n${"=".repeat(60)}`);
+  console.log(`📁 Processing: ${jobName} / ${groupName}`);
+  console.log(`${"=".repeat(60)}`);
+
+  // Read members.json
+  const membersJson = readMembersJson(jobName, groupName);
+  if (!membersJson) {
+    console.error(`❌ Failed to read members.json, skipping group\n`);
+    return result;
   }
 
-  const dataFilePath = path.resolve(process.cwd(), args[0]);
-
-  // Check if file exists
-  if (!fs.existsSync(dataFilePath)) {
-    console.error(`❌ File not found: ${dataFilePath}`);
-    process.exit(1);
-  }
-
-  // Read and parse JSON
-  let data: DataJson;
-  try {
-    const fileContent = fs.readFileSync(dataFilePath, "utf-8");
-    data = JSON.parse(fileContent);
-  } catch (error) {
-    console.error(`❌ Failed to parse JSON file:`, error);
-    process.exit(1);
-  }
-
-  console.log(`\n🚀 Starting bulk thread creation`);
-  console.log(`📁 File: ${dataFilePath}`);
-  console.log(`👥 Group: ${data.metadata.group}`);
-  console.log(`📊 Total members: ${data.members.length}\n`);
-
-  let successCount = 0;
-  let skipCount = 0;
-  let failCount = 0;
+  result.total = membersJson.members.length;
+  console.log(`👥 Total members: ${result.total}`);
 
   // Process each member
-  for (let i = 0; i < data.members.length; i++) {
-    const member = data.members[i];
-    console.log(`[${i + 1}/${data.members.length}]`);
+  for (let i = 0; i < membersJson.members.length; i++) {
+    const member = membersJson.members[i];
+    console.log(`\n[${i + 1}/${result.total}]`);
 
-    const result = await createThread(member, {
-      job: data.metadata.job,
-      group: data.metadata.group,
+    const success = await createThread(member, {
+      job: membersJson.metadata.job,
+      group: membersJson.metadata.group,
     });
 
-    if (result) {
-      const { data: existingThread } = await supabase
-        .from("threads")
-        .select("id")
-        .eq(
-          "youtube_id",
-          member.youtube_id.startsWith("UC")
-            ? member.youtube_id
-            : member.youtube_id,
-        )
-        .single();
-
-      if (existingThread) {
-        skipCount++;
+    if (success) {
+      // Check if it was skipped (existing thread) or newly created
+      if (!member.youtube_id) {
+        result.skipped++;
       } else {
-        successCount++;
+        const { data: existingThread } = await supabase
+          .from("threads")
+          .select("id")
+          .eq("youtube_id", member.youtube_id.startsWith("UC") ? member.youtube_id : member.youtube_id)
+          .single();
+
+        if (existingThread) {
+          result.skipped++;
+        } else {
+          result.success++;
+        }
       }
     } else {
-      failCount++;
+      result.failed++;
     }
 
-    // Rate limiting: wait 100ms between requests to avoid YouTube API quota issues
+    // Rate limiting: wait 100ms between requests
     await new Promise((resolve) => setTimeout(resolve, 100));
   }
 
-  // Summary
-  console.log(`\n${"=".repeat(50)}`);
-  console.log(`✅ Summary:`);
-  console.log(`   Total:   ${data.members.length}`);
-  console.log(`   Success: ${successCount}`);
-  console.log(`   Skipped: ${skipCount} (already exists)`);
-  console.log(`   Failed:  ${failCount}`);
-  console.log(`${"=".repeat(50)}\n`);
+  // Group summary
+  console.log(`\n${"─".repeat(60)}`);
+  console.log(`📊 Group Summary: ${jobName} / ${groupName}`);
+  console.log(`   Total:   ${result.total}`);
+  console.log(`   Success: ${result.success}`);
+  console.log(`   Skipped: ${result.skipped} (already exists or no YouTube channel)`);
+  console.log(`   Failed:  ${result.failed}`);
+  console.log(`${"─".repeat(60)}\n`);
 
-  if (failCount > 0) {
+  return result;
+}
+
+/**
+ * Main function
+ */
+async function main() {
+  console.log(`\n🚀 Starting data synchronization...\n`);
+
+  const allResults: GroupProcessResult[] = [];
+  let totalGroups = 0;
+
+  // 1. Get all job directories
+  const jobNames = getJobDirectories();
+  console.log(`📁 Found ${jobNames.length} job(s): ${jobNames.join(", ")}\n`);
+
+  if (jobNames.length === 0) {
+    console.warn("⚠️  No job directories found. Nothing to sync.\n");
+    return;
+  }
+
+  // 2. Process each job and group
+  for (const jobName of jobNames) {
+    const groupNames = getGroupDirectories(jobName);
+    totalGroups += groupNames.length;
+
+    console.log(`📁 [${jobName}] Found ${groupNames.length} group(s)...`);
+
+    if (groupNames.length === 0) {
+      console.warn(`   ⚠️  No valid groups found. Skipping.\n`);
+      continue;
+    }
+
+    for (const groupName of groupNames) {
+      const result = await processGroup(jobName, groupName);
+      allResults.push(result);
+    }
+  }
+
+  // 3. Overall summary
+  console.log(`\n${"=".repeat(60)}`);
+  console.log(`✅ Overall Summary`);
+  console.log(`${"=".repeat(60)}`);
+  console.log(`📊 Jobs processed: ${jobNames.length}`);
+  console.log(`📊 Groups processed: ${allResults.length}/${totalGroups}`);
+  console.log();
+
+  const totalSuccess = allResults.reduce((sum, r) => sum + r.success, 0);
+  const totalSkipped = allResults.reduce((sum, r) => sum + r.skipped, 0);
+  const totalFailed = allResults.reduce((sum, r) => sum + r.failed, 0);
+  const totalMembers = allResults.reduce((sum, r) => sum + r.total, 0);
+
+  console.log(`📊 Total members: ${totalMembers}`);
+  console.log(`   ✅ Success: ${totalSuccess} (newly created or updated)`);
+  console.log(`   ⚠️  Skipped: ${totalSkipped} (already exists or no YouTube channel)`);
+  console.log(`   ❌ Failed:  ${totalFailed}`);
+  console.log(`${"=".repeat(60)}\n`);
+
+  if (totalFailed > 0) {
+    console.error("❌ Some members failed to sync. Please check the logs above.");
     process.exit(1);
   }
+
+  console.log("🎉 Data synchronization complete!\n");
 }
 
 // Execute

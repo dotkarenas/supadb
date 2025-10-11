@@ -6,8 +6,9 @@
   "scripts": {
     "validate": "ajv validate -s data/schema.json -d",
     "update-metadata": "tsx scripts/update-metadata.ts",
-    "bulk-create:development": "NODE_ENV=development tsx scripts/bulk-create-threads.ts",
-    "bulk-create:production": "NODE_ENV=production tsx scripts/bulk-create-threads.ts",
+    "update-master": "tsx scripts/update-master.ts",
+    "sync-data:development": "NODE_ENV=development tsx scripts/sync-data.ts",
+    "sync-data:production": "NODE_ENV=production tsx scripts/sync-data.ts",
     "type-check": "tsc --noEmit",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

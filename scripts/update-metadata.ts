@@ -25,7 +25,6 @@ interface JobMetadata {
 interface GroupMetadata {
   name: string;
   source: string | null;
-  status: "pending" | "completed";
 }
 
 interface JobsJson {
@@ -171,7 +170,7 @@ function readExistingGroupsJson(jobName: string): GroupsJson | null {
  * Generate groups.json for a specific job
  */
 function generateGroupsJson(jobName: string, groupNames: string[]): GroupsJson {
-  // Read existing groups.json to preserve pending entries
+  // Read existing groups.json to preserve entries without members.json
   const existingGroupsJson = readExistingGroupsJson(jobName);
   const existingGroupsMap = new Map<string, GroupMetadata>();
 
@@ -184,7 +183,7 @@ function generateGroupsJson(jobName: string, groupNames: string[]): GroupsJson {
   const groups: GroupMetadata[] = [];
   const processedGroupNames = new Set<string>();
 
-  // Process groups with members.json (completed)
+  // Process groups with members.json
   for (const groupName of groupNames) {
     const membersJson = readMembersJson(jobName, groupName);
 
@@ -196,7 +195,6 @@ function generateGroupsJson(jobName: string, groupNames: string[]): GroupsJson {
       groups.push({
         name: groupName,
         source: null,
-        status: "completed",
       });
       processedGroupNames.add(groupName);
       continue;
@@ -211,19 +209,15 @@ function generateGroupsJson(jobName: string, groupNames: string[]): GroupsJson {
     groups.push({
       name: groupDisplayName,
       source: membersJson.metadata.source || existingGroup?.source || null,
-      status: "completed",
     });
   }
 
-  // Preserve pending entries from existing groups.json
+  // Preserve entries from existing groups.json that don't have members.json yet
   if (existingGroupsJson) {
     for (const existingGroup of existingGroupsJson.groups) {
-      if (
-        existingGroup.status === "pending" &&
-        !processedGroupNames.has(existingGroup.name)
-      ) {
+      if (!processedGroupNames.has(existingGroup.name)) {
         groups.push(existingGroup);
-        console.log(`   ℹ️  Preserved pending group: ${existingGroup.name}`);
+        console.log(`   ℹ️  Preserved group: ${existingGroup.name}`);
       }
     }
   }
