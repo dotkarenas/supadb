@@ -1,11 +1,19 @@
 {
-  "metadata": {
-    "source": ["https://avtuber.doerolife.com/office/"]
-  },
+  "metadata": {},
   "groups": [
     {
       "name": "PROMISU",
       "source": "https://www.promisu.live/talent",
+      "status": "completed"
+    },
+    {
+      "name": "Vanilla_Syrup",
+      "source": "https://x.com/vsyrup98677",
+      "status": "completed"
+    },
+    {
+      "name": "ともなりっ！",
+      "source": "https://tomonari.weebly.com/cast.html",
       "status": "completed"
     },
     {
@@ -21,16 +29,6 @@
     {
       "name": "ぴゅあえんじぇる",
       "source": null,
-      "status": "pending"
-    },
-    {
-      "name": "個人勢",
-      "source": null,
-      "status": "completed"
-    },
-    {
-      "name": "ともなりっ！",
-      "source": "https://tomonari.weebly.com/cast.html",
       "status": "completed"
     },
     {
@@ -44,9 +42,9 @@
       "status": "completed"
     },
     {
-      "name": "Vanilla_Syrup",
-      "source": "",
-      "status": "pending"
+      "name": "個人勢",
+      "source": null,
+      "status": "completed"
     },
     {
       "name": "ないとどりーみん",
