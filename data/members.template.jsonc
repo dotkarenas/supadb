@@ -28,15 +28,8 @@
       // required
       // type: string
       // ex: UC1DCedRgGHBdm81E1llLhOQ or @username
-      // note: can be empty string if status is "inactive"
+      // note: can be empty string if YouTube channel does not exist
       "youtube_id": "<YOUTUBE_ID>",
-      // optional
-      // type: string
-      // enum: "active" | "inactive"
-      // default: "active"
-      // "active": has YouTube channel and can be synced to Supabase
-      // "inactive": no YouTube channel or not active
-      "status": "active",
       // optional
       // type: string[] | null
       // ex: ["ホロライブ 3期生"] or null
@@ -45,7 +38,6 @@
     {
       "name": "",
       "youtube_id": "",
-      "status": "active",
       "options": null
     }
   ]
