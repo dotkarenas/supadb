@@ -94,16 +94,15 @@ Each `members.json` follows this schema:
     {
       "name": "Name",
       "youtube_id": "UC... or @handle",
-      "status": "active",
       "options": ["Optional tags"]
     }
   ]
 }
 ```
 
-**Member Status:**
-- `active`: Member has a YouTube channel and will be synced to Supabase (default)
-- `inactive`: Member has no YouTube channel or is not currently active (will be skipped during sync)
+**YouTube Channel Handling:**
+- Members with `youtube_id`: Will be synced to Supabase with channel info and avatar
+- Members with empty `youtube_id` (`""`): Will be skipped during sync (no YouTube channel exists or not yet discovered)
 
 ### YouTube ID Formats
 
@@ -113,9 +112,8 @@ Each `members.json` follows this schema:
 ### Validation Rules
 
 - `youtube_id` must match: `^(UC[a-zA-Z0-9_-]{22}|@[a-zA-Z0-9_-]+)?$` (can be empty string)
-- `status` must be either `"active"` or `"inactive"` (defaults to `"active"`)
 - Required fields: `metadata.job`, `metadata.group`, `member.name`, `member.youtube_id`
-- Optional fields: `metadata.options`, `metadata.source`, `member.status`, `member.options`
+- Optional fields: `metadata.options`, `metadata.source`, `member.options`
 
 ## Data Structure
 

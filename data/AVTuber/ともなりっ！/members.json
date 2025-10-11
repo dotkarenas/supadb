@@ -9,38 +9,32 @@
     {
       "name": "天乃てん",
       "youtube_id": "",
-      "options": ["ともなりっ！0期生"],
-      "status": "inactive"
+      "options": ["ともなりっ！0期生"]
     },
     {
       "name": "ルイズ･ブランシュ",
       "youtube_id": "UCww0b36JjRX8wK7NUj0Lw0Q",
-      "options": ["ともなりっ！0期生"],
-      "status": "active"
+      "options": ["ともなりっ！0期生"]
     },
     {
       "name": "狼牙せら",
       "youtube_id": "UCa2HuzAYLZXOW6_0QJRY-Pg",
-      "options": ["ともなりっ！0期生"],
-      "status": "active"
+      "options": ["ともなりっ！0期生"]
     },
     {
       "name": "緋煙マイン",
       "youtube_id": "",
-      "options": ["ともなりっ！1期生"],
-      "status": "active"
+      "options": ["ともなりっ！1期生"]
     },
     {
       "name": "城咲メリミ",
       "youtube_id": "",
-      "options": ["ともなりっ！1期生"],
-      "status": "active"
+      "options": ["ともなりっ！1期生"]
     },
     {
       "name": "青華とわ",
       "youtube_id": "",
-      "options": ["ともなりっ！1期生"],
-      "status": "active"
+      "options": ["ともなりっ！1期生"]
     }
   ]
 }
