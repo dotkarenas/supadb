@@ -3,43 +3,35 @@
   "groups": [
     {
       "name": "Neo-Porte",
-      "source": "https://neo-porte.jp/talent/",
-      "status": "completed"
+      "source": "https://neo-porte.jp/talent/"
     },
     {
       "name": "VAZ",
-      "source": "https://vaz.co.jp/talent-category/vtuber/",
-      "status": "completed"
+      "source": "https://vaz.co.jp/talent-category/vtuber/"
     },
     {
       "name": "VShojo",
-      "source": "https://www.vshojo.com",
-      "status": "completed"
+      "source": "https://www.vshojo.com"
     },
     {
       "name": "にじさんじ",
-      "source": "https://www.nijisanji.jp/talents",
-      "status": "completed"
+      "source": "https://www.nijisanji.jp/talents"
     },
     {
       "name": "ぶいすぽっ！",
-      "source": "https://store.vspo.jp/collections/members",
-      "status": "completed"
+      "source": "https://store.vspo.jp/collections/members"
     },
     {
       "name": "ホロライブ",
-      "source": "https://hololive.hololivepro.com/talents",
-      "status": "completed"
+      "source": "https://hololive.hololivepro.com/talents"
     },
     {
       "name": "個人勢",
-      "source": null,
-      "status": "completed"
+      "source": null
     },
     {
       "name": "登龍門BOX",
-      "source": "https://www.vmon.jp/box-talents",
-      "status": "completed"
+      "source": "https://www.vmon.jp/box-talents"
     }
   ]
 }

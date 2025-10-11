@@ -44,8 +44,7 @@ Automatically generates/updates metadata files based on directory structure:
 **Behavior**:
 - Scans all directories under `data/` to detect jobs and groups
 - Extracts `metadata.group` and `metadata.source` from each `members.json`
-- Sets `status: "completed"` for groups with existing `members.json`
-- Preserves `status: "pending"` entries for groups planned but not yet collected
+- Preserves existing group entries that don't have `members.json` yet
 - Run this before committing changes to keep metadata in sync
 
 ### Validation
@@ -89,7 +88,6 @@ Syncs VTuber data to Supabase:
 - `groups.json`: Contains array of group objects with:
   - `name`: Group display name (from `members.json` metadata)
   - `source`: Official website URL (nullable)
-  - `status`: Either `"pending"` (planned) or `"completed"` (has `members.json`)
 
 ### Supabase Integration
 The `bulk-create-threads.ts` script integrates with Supabase:
@@ -154,13 +152,12 @@ Each `members.json` follows this schema:
 
 ### Workflow for Adding New Groups
 
-#### 1. Plan: Add to groups.json (Optional but Recommended)
-Before collecting member data, you can add the group to `groups.json` with `status: "pending"`:
+#### 1. Plan: Add to groups.json (Optional)
+Before collecting member data, you can add the group to `groups.json`:
 ```json
 {
   "name": "New Group Name",
-  "source": "https://example.com",
-  "status": "pending"
+  "source": "https://example.com"
 }
 ```
 This helps track which groups you plan to collect.
@@ -176,8 +173,8 @@ This helps track which groups you plan to collect.
 npm run update-metadata
 ```
 This automatically:
-- Updates `groups.json` with the new group (sets `status: "completed"`)
-- Preserves any `pending` entries you added manually
+- Updates `groups.json` with the new group
+- Preserves any existing entries you added manually
 
 #### 4. Sync to Supabase
 - Development: `npm run bulk-create:development data/{job_name}/{group_name}/members.json`
