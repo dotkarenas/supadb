@@ -200,6 +200,12 @@
     },
     {
       "job": "AVTuber",
+      "group": "たまぷろじぇくと",
+      "name": "姫乃もも",
+      "youtube_id": "UCMcFh8o5D5CU1FfB6N_jXMw"
+    },
+    {
+      "job": "AVTuber",
       "group": "ともなりっ！",
       "name": "天乃てん",
       "youtube_id": "",
@@ -2151,7 +2157,7 @@
     {
       "job": "VTuber",
       "group": "ホロライブ",
-      "name": "Elizabeth Rose Bloodflame Ch. hololive-EN",
+      "name": "Elizabeth Rose Bloodflame",
       "youtube_id": "UCW5uhrG1eCBYditmhL0Ykjw",
       "options": [
         "Justice",
@@ -2161,7 +2167,7 @@
     {
       "job": "VTuber",
       "group": "ホロライブ",
-      "name": "Flare Ch. 不知火フレア",
+      "name": "不知火フレア",
       "youtube_id": "UCvInZx9h3jC2JzsIzoOebWg",
       "options": [
         "ホロライブ 3期生"
@@ -2170,7 +2176,7 @@
     {
       "job": "VTuber",
       "group": "ホロライブ",
-      "name": "Gawr Gura Ch. hololive-EN",
+      "name": "がうる・ぐら",
       "youtube_id": "UCoSrY_IQQVpmIRZ9Xf-y93g",
       "options": [
         "Myth",
