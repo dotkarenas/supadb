@@ -142,7 +142,10 @@ function getGroupDirectories(jobName: string): string[] {
 /**
  * Read and parse members.json
  */
-function readMembersJson(jobName: string, groupName: string): MembersJson | null {
+function readMembersJson(
+  jobName: string,
+  groupName: string,
+): MembersJson | null {
   const membersJsonPath = path.join(
     DATA_DIR,
     jobName,
@@ -589,6 +592,8 @@ async function processGroup(
   // Process each member
   for (let i = 0; i < membersJson.members.length; i++) {
     const member = membersJson.members[i];
+    if (!member) continue; // Skip if member is undefined
+
     console.log(`\n[${i + 1}/${result.total}]`);
 
     const success = await createThread(member, {
@@ -604,7 +609,12 @@ async function processGroup(
         const { data: existingThread } = await supabase
           .from("threads")
           .select("id")
-          .eq("youtube_id", member.youtube_id.startsWith("UC") ? member.youtube_id : member.youtube_id)
+          .eq(
+            "youtube_id",
+            member.youtube_id.startsWith("UC")
+              ? member.youtube_id
+              : member.youtube_id,
+          )
           .single();
 
         if (existingThread) {
@@ -626,7 +636,9 @@ async function processGroup(
   console.log(`📊 Group Summary: ${jobName} / ${groupName}`);
   console.log(`   Total:   ${result.total}`);
   console.log(`   Success: ${result.success}`);
-  console.log(`   Skipped: ${result.skipped} (already exists or no YouTube channel)`);
+  console.log(
+    `   Skipped: ${result.skipped} (already exists or no YouTube channel)`,
+  );
   console.log(`   Failed:  ${result.failed}`);
   console.log(`${"─".repeat(60)}\n`);
 
@@ -684,12 +696,16 @@ async function main() {
 
   console.log(`📊 Total members: ${totalMembers}`);
   console.log(`   ✅ Success: ${totalSuccess} (newly created or updated)`);
-  console.log(`   ⚠️  Skipped: ${totalSkipped} (already exists or no YouTube channel)`);
+  console.log(
+    `   ⚠️  Skipped: ${totalSkipped} (already exists or no YouTube channel)`,
+  );
   console.log(`   ❌ Failed:  ${totalFailed}`);
   console.log(`${"=".repeat(60)}\n`);
 
   if (totalFailed > 0) {
-    console.error("❌ Some members failed to sync. Please check the logs above.");
+    console.error(
+      "❌ Some members failed to sync. Please check the logs above.",
+    );
     process.exit(1);
   }
 
