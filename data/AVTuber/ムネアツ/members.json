@@ -1,0 +1,40 @@
+{
+  "metadata": {
+    "job": "AVTuber",
+    "group": "ムネアツ",
+    "options": null,
+    "source": "https://asmrvtuberproject.com/"
+  },
+  "members": [
+    {
+      "name": "ソニア・アトレイシア",
+      "youtube_id": "UCwGXkXmv5D-DSX7ZVfWGKzA",
+      "options": null
+    },
+    {
+      "name": "サンタ・アプア",
+      "youtube_id": "UC28FXQ45BWCRxd47w-RA8-w",
+      "options": null
+    },
+    {
+      "name": "ミス・ネフェルー",
+      "youtube_id": "UCyn5FmD-hCvyxjhLUkQ-f-w",
+      "options": null
+    },
+    {
+      "name": "六条しらん",
+      "youtube_id": "UCboSD0grJTlrzFROUCaGZiA",
+      "options": null
+    },
+    {
+      "name": "夜世",
+      "youtube_id": "UCWai5sz1uXtdnc3Yoe7vydQ",
+      "options": null
+    },
+    {
+      "name": "あぢさゐ",
+      "youtube_id": "UCf0qP1GoDc4DGTKHE7ocjjw",
+      "options": null
+    }
+  ]
+}
