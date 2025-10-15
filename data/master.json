@@ -356,6 +356,24 @@
     },
     {
       "job": "AVTuber",
+      "group": "らぶ♡どる",
+      "name": "霧崎玲花",
+      "youtube_id": "UCN-xMRjs4UH8j7_VMAVhphA"
+    },
+    {
+      "job": "AVTuber",
+      "group": "らぶ♡どる",
+      "name": "花園まひろ",
+      "youtube_id": "UCLuU4dU-Ck21Rt0yj1BdSkA"
+    },
+    {
+      "job": "AVTuber",
+      "group": "らぶ♡どる",
+      "name": "雪羽ふわり",
+      "youtube_id": "UCGpPn3QiAy2q37X_vkanoFw"
+    },
+    {
+      "job": "AVTuber",
       "group": "わんだーらすと",
       "name": "藤兎Fullmoon",
       "youtube_id": "UCHp3W3FXdfGowMCVbg8N6vQ"
@@ -365,6 +383,96 @@
       "group": "わんだーらすと",
       "name": "霧月Iris",
       "youtube_id": ""
+    },
+    {
+      "job": "AVTuber",
+      "group": "エレガントふわふわ",
+      "name": "ゆらがわもふぃ",
+      "youtube_id": ""
+    },
+    {
+      "job": "AVTuber",
+      "group": "エレガントふわふわ",
+      "name": "さくらいまふゆ",
+      "youtube_id": "UCBrePTEh5bNAp3DPt1e1PBA"
+    },
+    {
+      "job": "AVTuber",
+      "group": "エレガントふわふわ",
+      "name": "百合音リリィ",
+      "youtube_id": "UC53_ZEuxmYaldFINhJyRiWg"
+    },
+    {
+      "job": "AVTuber",
+      "group": "エレガントふわふわ",
+      "name": "七緒優",
+      "youtube_id": ""
+    },
+    {
+      "job": "AVTuber",
+      "group": "エレガントふわふわ",
+      "name": "井栗まろん",
+      "youtube_id": "UCRMepDAY7nKqPvIPLcrt7YQ"
+    },
+    {
+      "job": "AVTuber",
+      "group": "エレガントふわふわ",
+      "name": "Suzu",
+      "youtube_id": ""
+    },
+    {
+      "job": "AVTuber",
+      "group": "エレガントふわふわ",
+      "name": "星乃千雪",
+      "youtube_id": ""
+    },
+    {
+      "job": "AVTuber",
+      "group": "エレガントふわふわ",
+      "name": "鈴花あやめ",
+      "youtube_id": ""
+    },
+    {
+      "job": "AVTuber",
+      "group": "エレガントふわふわ",
+      "name": "小春ひより",
+      "youtube_id": ""
+    },
+    {
+      "job": "AVTuber",
+      "group": "プラベルーム",
+      "name": "ニシンちゃん",
+      "youtube_id": "UCl1MhWNC_FYbXw2qqKfWeuQ"
+    },
+    {
+      "job": "AVTuber",
+      "group": "プラベルーム",
+      "name": "虎神ちゃいろ",
+      "youtube_id": ""
+    },
+    {
+      "job": "AVTuber",
+      "group": "プラベルーム",
+      "name": "月夜メア",
+      "youtube_id": "UCvAcq-7TmDLgLSuhilaheSQ"
+    },
+    {
+      "job": "AVTuber",
+      "group": "プラベルーム",
+      "name": "feath",
+      "youtube_id": "UCRvwEwnw6chZ4vxC8J7MgMA"
+    },
+    {
+      "job": "AVTuber",
+      "group": "プラベルーム",
+      "name": "十五夜あぴ",
+      "youtube_id": "UCNCWshkTvydlz1oMyerp2zw"
+    },
+    {
+      "job": "AVTuber",
+      "group": "プラベルーム",
+      "name": "花街なち",
+      "youtube_id": "UC2yg8Ik27oj3mssFp9NhN5A"
     },
     {
       "job": "AVTuber",
@@ -443,6 +551,12 @@
       "group": "個人勢",
       "name": "はなみん",
       "youtube_id": "UCyx-IBwY76aPtBS8zg_4wsQ"
+    },
+    {
+      "job": "AVTuber",
+      "group": "個人勢",
+      "name": "網野ぴこん",
+      "youtube_id": "UCaHOwP5OBwQ1KmpV6u6vWjQ"
     },
     {
       "job": "VTuber",
@@ -774,6 +888,156 @@
         "VShojoJP",
         "VShojo NOVA"
       ]
+    },
+    {
+      "job": "VTuber",
+      "group": "ななしいんく",
+      "name": "因幡はねる",
+      "youtube_id": "UC0Owc36U9lOyi9Gx9Ic-4qg"
+    },
+    {
+      "job": "VTuber",
+      "group": "ななしいんく",
+      "name": "堰代ミコ",
+      "youtube_id": "UCDh2bWI5EDu7PavqwICkVpA"
+    },
+    {
+      "job": "VTuber",
+      "group": "ななしいんく",
+      "name": "風見くく",
+      "youtube_id": "UCXp7sNC0F_qkjickvlYkg-Q"
+    },
+    {
+      "job": "VTuber",
+      "group": "ななしいんく",
+      "name": "飛良ひかり",
+      "youtube_id": "UCFsWaTQ7kT76jNNGeGIKNSA"
+    },
+    {
+      "job": "VTuber",
+      "group": "ななしいんく",
+      "name": "涼海ネモ",
+      "youtube_id": "UCBJ6nejlzes6mm9UruaxQsA"
+    },
+    {
+      "job": "VTuber",
+      "group": "ななしいんく",
+      "name": "天羽衣",
+      "youtube_id": "UCW98GVLrx8lG_ddOts3cl4g"
+    },
+    {
+      "job": "VTuber",
+      "group": "ななしいんく",
+      "name": "羽流鷲りりり",
+      "youtube_id": "UCLK0cRXu3PY7cPbdWiVYemA"
+    },
+    {
+      "job": "VTuber",
+      "group": "ななしいんく",
+      "name": "宗谷いちか",
+      "youtube_id": "UC2kyQhzGOB-JPgcQX9OMgEw"
+    },
+    {
+      "job": "VTuber",
+      "group": "ななしいんく",
+      "name": "杏戸ゆげ",
+      "youtube_id": "UC3EhsuKdEkI99TWZwZgWutg"
+    },
+    {
+      "job": "VTuber",
+      "group": "ななしいんく",
+      "name": "柚原いづみ",
+      "youtube_id": "UCW8WKciBixmaqaGqrlTITRQ"
+    },
+    {
+      "job": "VTuber",
+      "group": "ななしいんく",
+      "name": "湖南みあ",
+      "youtube_id": "UC4PrHgUcAtOoj_LKmUL-uLQ"
+    },
+    {
+      "job": "VTuber",
+      "group": "ななしいんく",
+      "name": "家入ポポ",
+      "youtube_id": "UC_hjHmi-ODGhHlSzD16p5Pw"
+    },
+    {
+      "job": "VTuber",
+      "group": "ななしいんく",
+      "name": "日向ましゅ",
+      "youtube_id": "UCBhfuPYgo5ALbn6WmTXwHwg"
+    },
+    {
+      "job": "VTuber",
+      "group": "ななしいんく",
+      "name": "島村シャルロット",
+      "youtube_id": "UCYTz3uIgwVY3ZU-IQJS8r3A"
+    },
+    {
+      "job": "VTuber",
+      "group": "ななしいんく",
+      "name": "花奏かのん",
+      "youtube_id": "UCmqrvfLMws-GLGHQcB5dasg"
+    },
+    {
+      "job": "VTuber",
+      "group": "ななしいんく",
+      "name": "龍ヶ崎リン",
+      "youtube_id": "UC2hc-00y-MSR6eYA4eQ4tjQ"
+    },
+    {
+      "job": "VTuber",
+      "group": "ななしいんく",
+      "name": "月野木ちろる",
+      "youtube_id": "UCqskJ0nmw-_eweWfsKvbrzQ"
+    },
+    {
+      "job": "VTuber",
+      "group": "ななしいんく",
+      "name": "瑚白ユリ",
+      "youtube_id": "UCGyywYAJd2O5Y7yUyr7qBRQ"
+    },
+    {
+      "job": "VTuber",
+      "group": "ななしいんく",
+      "name": "天絆ささは",
+      "youtube_id": "UCuX1NOTF2wZVXo8WP1q7uLw"
+    },
+    {
+      "job": "VTuber",
+      "group": "ななしいんく",
+      "name": "西園寺メアリ",
+      "youtube_id": "UCwePpiw1ocZRSNSkpKvVISw"
+    },
+    {
+      "job": "VTuber",
+      "group": "ななしいんく",
+      "name": "季咲あんこ",
+      "youtube_id": "UChXm-xAYPfygrbyLo2yCASQ"
+    },
+    {
+      "job": "VTuber",
+      "group": "ななしいんく",
+      "name": "瀬島るい",
+      "youtube_id": "UC_WOBIopwUih0rytRnr_1Ag"
+    },
+    {
+      "job": "VTuber",
+      "group": "ななしいんく",
+      "name": "茜音カンナ",
+      "youtube_id": "UCkpqb53xiOvOgNYEbNpFSyw"
+    },
+    {
+      "job": "VTuber",
+      "group": "ななしいんく",
+      "name": "蛇宵ティア",
+      "youtube_id": "UCrt4cTM_sWH0iySLMkwwYLQ"
+    },
+    {
+      "job": "VTuber",
+      "group": "ななしいんく",
+      "name": "幽音しの",
+      "youtube_id": "UCTbEua7o1f8I7EMBQlLjTpQ"
     },
     {
       "job": "VTuber",
@@ -2837,6 +3101,18 @@
       "group": "個人勢",
       "name": "ゆるりめぐ",
       "youtube_id": "UC01gb86Qdlkh23Nqk3A1OLQ"
+    },
+    {
+      "job": "VTuber",
+      "group": "個人勢",
+      "name": "日南",
+      "youtube_id": "UCX8fFzD1Kdi8uCSmbOce08w"
+    },
+    {
+      "job": "VTuber",
+      "group": "個人勢",
+      "name": "合歓乃ねむ",
+      "youtube_id": "UCNEnXm3w-76xWDLd3Dv26ng"
     },
     {
       "job": "VTuber",
